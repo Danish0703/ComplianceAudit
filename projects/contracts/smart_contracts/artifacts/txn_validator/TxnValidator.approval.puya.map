@@ -1,0 +1,2050 @@
+{
+  "version": 3,
+  "sources": [
+    "../../txn_validator/contract.py"
+  ],
+  "mappings": ";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAUQ;AAA6B;;;;;;AAA7B;AACA;AAAuB;;AAAvB;AAPR;;AAAA;;;AAAA;;;;;;;;;;;;;;;;;;;;;;;;;;;AAAA;;;AAAA;;;;;;;;;;;;AAAA;;AAgDK;;AAAA;AAAA;AAAA;;AAAA;AAAA;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;;AALA;;AAAA;AAAA;AAAA;;AAAA;AA3CL;;;AAAA;AAAA;;AA2CK;;;AAAA;;;AAAA;AAAA;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;;AAtBA;;AAAA;AAAA;AAAA;;AAAA;AArBL;;;AAAA;AAAA;;AAAA;;;AAAA;AAAA;;AAAA;;;AAAA;AAqBK;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;;AALA;;AAAA;AAAA;AAAA;;AAAA;AAhBL;;;AAAA;AAAA;;AAAA;;;;AAAA;AAgBK;;;AAAA;;AAPA;;AAAA;AAAA;AAAA;;AAAA;AATL;;;AAAA;AAAA;;;AAAA;AASK;;;AAAA;;AATL;;AAAA;;;;;;;;;AASA;;;AAEe;;AAAc;;AAAd;AAAP;AACO;;AAAmB;AAAnB;AAAP;AACA;AAAA;;AAAA;AACA;AAAA;;AAAA;;AAER;;;AAEe;;AAAc;;AAAd;AAAP;AACA;AAAA;;AAAA;AAAA;;AAAA;AAAA;;AAER;;;;;AAEe;;AAAA;;AAAA;AAAP;AACA;;AAAA;AAEgC;AAAA;;AAAA;AAAA;AAAA;AAAA;AAAA;AACI;AAAA;;AAAA;AAAA;AAAA;;AAAA;AAAA;AAEhC;;;AAAkB;;AAAkB;AAAlB;AAAlB;;;AACA;;AAAA;;;AAAoB;;AAAoB;AAApB;AAApB;;;AAEO;AAAP;;AAAA;AAEQ;AAAA;AAAA;AAAA;AAAT;;AAAA;AAAX;;;AACmB;;AAAP;;AAAA;AAGM;;AAAS;AAAT;AAAyB;AAAA;AAAA;AAAA;AAA1B;AAAT;AAAA;;AACY;AAAT;AAAX;;;AACmB;AAAP;;AAAA;AACJ;AAER;;;AAEyB;AAAA;;AAAA;AAAA;AAAA;AAAA;AAAA;AACV;;;AAAW;;AAAU;AAAV;AAAX;;;;AAAP;AAAA;;;;;AAIO;AAAA;AAAA;AAAA;AAAP",
+  "op_pc_offset": 0,
+  "pc_events": {
+    "1": {
+      "subroutine": "smart_contracts.txn_validator.contract.TxnValidator.__algopy_entrypoint_with_init",
+      "params": {},
+      "block": "main",
+      "stack_in": [],
+      "op": "intcblock 1 0 100"
+    },
+    "6": {
+      "op": "bytecblock \"max_amount_micro_algo\" \"bl_\" \"alert_threshold\" 0x151f7c75"
+    },
+    "55": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0"
+      ]
+    },
+    "57": {
+      "op": "bnz main_after_if_else@2",
+      "stack_out": []
+    },
+    "60": {
+      "op": "bytec_0 // \"max_amount_micro_algo\"",
+      "defined_out": [
+        "\"max_amount_micro_algo\""
+      ],
+      "stack_out": [
+        "\"max_amount_micro_algo\""
+      ]
+    },
+    "61": {
+      "op": "pushint 1000000000 // 1000000000",
+      "defined_out": [
+        "\"max_amount_micro_algo\"",
+        "1000000000"
+      ],
+      "stack_out": [
+        "\"max_amount_micro_algo\"",
+        "1000000000"
+      ]
+    },
+    "67": {
+      "op": "app_global_put",
+      "stack_out": []
+    },
+    "68": {
+      "op": "bytec_2 // \"alert_threshold\"",
+      "defined_out": [
+        "\"alert_threshold\""
+      ],
+      "stack_out": [
+        "\"alert_threshold\""
+      ]
+    },
+    "69": {
+      "op": "pushint 70 // 70",
+      "defined_out": [
+        "\"alert_threshold\"",
+        "70"
+      ],
+      "stack_out": [
+        "\"alert_threshold\"",
+        "70"
+      ]
+    },
+    "71": {
+      "op": "app_global_put",
+      "stack_out": []
+    },
+    "72": {
+      "block": "main_after_if_else@2",
+      "stack_in": [],
+      "op": "txn NumAppArgs",
+      "defined_out": [
+        "tmp%0#2"
+      ],
+      "stack_out": [
+        "tmp%0#2"
+      ]
+    },
+    "74": {
+      "op": "bz main_bare_routing@10",
+      "stack_out": []
+    },
+    "77": {
+      "op": "pushbytess 0xb99e94e3 0xa5b578c4 0x9446ebb1 0x3d042fe1 0xc650d5a4 // method \"configure(uint64,uint64)void\", method \"set_wallet_block_status(account,bool)void\", method \"validate_transaction(account,account,uint64)uint64\", method \"is_wallet_blocked(account)bool\", method \"get_threshold()uint64\"",
+      "defined_out": [
+        "Method(configure(uint64,uint64)void)",
+        "Method(get_threshold()uint64)",
+        "Method(is_wallet_blocked(account)bool)",
+        "Method(set_wallet_block_status(account,bool)void)",
+        "Method(validate_transaction(account,account,uint64)uint64)"
+      ],
+      "stack_out": [
+        "Method(configure(uint64,uint64)void)",
+        "Method(set_wallet_block_status(account,bool)void)",
+        "Method(validate_transaction(account,account,uint64)uint64)",
+        "Method(is_wallet_blocked(account)bool)",
+        "Method(get_threshold()uint64)"
+      ]
+    },
+    "104": {
+      "op": "txna ApplicationArgs 0",
+      "defined_out": [
+        "Method(configure(uint64,uint64)void)",
+        "Method(get_threshold()uint64)",
+        "Method(is_wallet_blocked(account)bool)",
+        "Method(set_wallet_block_status(account,bool)void)",
+        "Method(validate_transaction(account,account,uint64)uint64)",
+        "tmp%2#0"
+      ],
+      "stack_out": [
+        "Method(configure(uint64,uint64)void)",
+        "Method(set_wallet_block_status(account,bool)void)",
+        "Method(validate_transaction(account,account,uint64)uint64)",
+        "Method(is_wallet_blocked(account)bool)",
+        "Method(get_threshold()uint64)",
+        "tmp%2#0"
+      ]
+    },
+    "107": {
+      "op": "match main_configure_route@5 main_set_wallet_block_status_route@6 main_validate_transaction_route@7 main_is_wallet_blocked_route@8 main_get_threshold_route@9",
+      "stack_out": []
+    },
+    "119": {
+      "block": "main_after_if_else@12",
+      "stack_in": [],
+      "op": "intc_1 // 0",
+      "defined_out": [
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0"
+      ]
+    },
+    "120": {
+      "op": "return",
+      "stack_out": []
+    },
+    "121": {
+      "block": "main_get_threshold_route@9",
+      "stack_in": [],
+      "op": "txn OnCompletion",
+      "defined_out": [
+        "tmp%33#0"
+      ],
+      "stack_out": [
+        "tmp%33#0"
+      ]
+    },
+    "123": {
+      "op": "!",
+      "defined_out": [
+        "tmp%34#0"
+      ],
+      "stack_out": [
+        "tmp%34#0"
+      ]
+    },
+    "124": {
+      "error": "OnCompletion is not NoOp",
+      "op": "assert // OnCompletion is not NoOp",
+      "stack_out": []
+    },
+    "125": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%35#0"
+      ],
+      "stack_out": [
+        "tmp%35#0"
+      ]
+    },
+    "127": {
+      "error": "can only call when not creating",
+      "op": "assert // can only call when not creating",
+      "stack_out": []
+    },
+    "128": {
+      "callsub": "smart_contracts.txn_validator.contract.TxnValidator.get_threshold",
+      "op": "callsub get_threshold",
+      "defined_out": [
+        "to_encode%2#0"
+      ],
+      "stack_out": [
+        "to_encode%2#0"
+      ]
+    },
+    "131": {
+      "op": "itob",
+      "defined_out": [
+        "val_as_bytes%1#0"
+      ],
+      "stack_out": [
+        "val_as_bytes%1#0"
+      ]
+    },
+    "132": {
+      "op": "bytec_3 // 0x151f7c75",
+      "defined_out": [
+        "0x151f7c75",
+        "val_as_bytes%1#0"
+      ],
+      "stack_out": [
+        "val_as_bytes%1#0",
+        "0x151f7c75"
+      ]
+    },
+    "133": {
+      "op": "swap",
+      "stack_out": [
+        "0x151f7c75",
+        "val_as_bytes%1#0"
+      ]
+    },
+    "134": {
+      "op": "concat",
+      "defined_out": [
+        "tmp%37#0"
+      ],
+      "stack_out": [
+        "tmp%37#0"
+      ]
+    },
+    "135": {
+      "op": "log",
+      "stack_out": []
+    },
+    "136": {
+      "op": "intc_0 // 1",
+      "defined_out": [
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0"
+      ]
+    },
+    "137": {
+      "op": "return",
+      "stack_out": []
+    },
+    "138": {
+      "block": "main_is_wallet_blocked_route@8",
+      "stack_in": [],
+      "op": "txn OnCompletion",
+      "defined_out": [
+        "tmp%26#0"
+      ],
+      "stack_out": [
+        "tmp%26#0"
+      ]
+    },
+    "140": {
+      "op": "!",
+      "defined_out": [
+        "tmp%27#0"
+      ],
+      "stack_out": [
+        "tmp%27#0"
+      ]
+    },
+    "141": {
+      "error": "OnCompletion is not NoOp",
+      "op": "assert // OnCompletion is not NoOp",
+      "stack_out": []
+    },
+    "142": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%28#0"
+      ],
+      "stack_out": [
+        "tmp%28#0"
+      ]
+    },
+    "144": {
+      "error": "can only call when not creating",
+      "op": "assert // can only call when not creating",
+      "stack_out": []
+    },
+    "145": {
+      "op": "txna ApplicationArgs 1",
+      "defined_out": [
+        "reinterpret_bytes[1]%4#0"
+      ],
+      "stack_out": [
+        "reinterpret_bytes[1]%4#0"
+      ]
+    },
+    "148": {
+      "op": "btoi",
+      "defined_out": [
+        "tmp%30#0"
+      ],
+      "stack_out": [
+        "tmp%30#0"
+      ]
+    },
+    "149": {
+      "op": "txnas Accounts",
+      "defined_out": [
+        "tmp%31#0"
+      ],
+      "stack_out": [
+        "tmp%31#0"
+      ]
+    },
+    "151": {
+      "callsub": "smart_contracts.txn_validator.contract.TxnValidator.is_wallet_blocked",
+      "op": "callsub is_wallet_blocked",
+      "defined_out": [
+        "to_encode%1#0"
+      ],
+      "stack_out": [
+        "to_encode%1#0"
+      ]
+    },
+    "154": {
+      "op": "pushbytes 0x00",
+      "defined_out": [
+        "0x00",
+        "to_encode%1#0"
+      ],
+      "stack_out": [
+        "to_encode%1#0",
+        "0x00"
+      ]
+    },
+    "157": {
+      "op": "intc_1 // 0",
+      "defined_out": [
+        "0",
+        "0x00",
+        "to_encode%1#0"
+      ],
+      "stack_out": [
+        "to_encode%1#0",
+        "0x00",
+        "0"
+      ]
+    },
+    "158": {
+      "op": "uncover 2",
+      "stack_out": [
+        "0x00",
+        "0",
+        "to_encode%1#0"
+      ]
+    },
+    "160": {
+      "op": "setbit",
+      "defined_out": [
+        "encoded_bool%0#0"
+      ],
+      "stack_out": [
+        "encoded_bool%0#0"
+      ]
+    },
+    "161": {
+      "op": "bytec_3 // 0x151f7c75",
+      "defined_out": [
+        "0x151f7c75",
+        "encoded_bool%0#0"
+      ],
+      "stack_out": [
+        "encoded_bool%0#0",
+        "0x151f7c75"
+      ]
+    },
+    "162": {
+      "op": "swap",
+      "stack_out": [
+        "0x151f7c75",
+        "encoded_bool%0#0"
+      ]
+    },
+    "163": {
+      "op": "concat",
+      "defined_out": [
+        "tmp%32#0"
+      ],
+      "stack_out": [
+        "tmp%32#0"
+      ]
+    },
+    "164": {
+      "op": "log",
+      "stack_out": []
+    },
+    "165": {
+      "op": "intc_0 // 1",
+      "defined_out": [
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0"
+      ]
+    },
+    "166": {
+      "op": "return",
+      "stack_out": []
+    },
+    "167": {
+      "block": "main_validate_transaction_route@7",
+      "stack_in": [],
+      "op": "txn OnCompletion",
+      "defined_out": [
+        "tmp%16#0"
+      ],
+      "stack_out": [
+        "tmp%16#0"
+      ]
+    },
+    "169": {
+      "op": "!",
+      "defined_out": [
+        "tmp%17#0"
+      ],
+      "stack_out": [
+        "tmp%17#0"
+      ]
+    },
+    "170": {
+      "error": "OnCompletion is not NoOp",
+      "op": "assert // OnCompletion is not NoOp",
+      "stack_out": []
+    },
+    "171": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%18#0"
+      ],
+      "stack_out": [
+        "tmp%18#0"
+      ]
+    },
+    "173": {
+      "error": "can only call when not creating",
+      "op": "assert // can only call when not creating",
+      "stack_out": []
+    },
+    "174": {
+      "op": "txna ApplicationArgs 1",
+      "defined_out": [
+        "reinterpret_bytes[1]%2#0"
+      ],
+      "stack_out": [
+        "reinterpret_bytes[1]%2#0"
+      ]
+    },
+    "177": {
+      "op": "btoi",
+      "defined_out": [
+        "tmp%20#0"
+      ],
+      "stack_out": [
+        "tmp%20#0"
+      ]
+    },
+    "178": {
+      "op": "txnas Accounts",
+      "defined_out": [
+        "tmp%21#0"
+      ],
+      "stack_out": [
+        "tmp%21#0"
+      ]
+    },
+    "180": {
+      "op": "txna ApplicationArgs 2",
+      "defined_out": [
+        "reinterpret_bytes[1]%3#0",
+        "tmp%21#0"
+      ],
+      "stack_out": [
+        "tmp%21#0",
+        "reinterpret_bytes[1]%3#0"
+      ]
+    },
+    "183": {
+      "op": "btoi",
+      "defined_out": [
+        "tmp%21#0",
+        "tmp%22#0"
+      ],
+      "stack_out": [
+        "tmp%21#0",
+        "tmp%22#0"
+      ]
+    },
+    "184": {
+      "op": "txnas Accounts",
+      "defined_out": [
+        "tmp%21#0",
+        "tmp%23#0"
+      ],
+      "stack_out": [
+        "tmp%21#0",
+        "tmp%23#0"
+      ]
+    },
+    "186": {
+      "op": "txna ApplicationArgs 3",
+      "defined_out": [
+        "reinterpret_bytes[8]%2#0",
+        "tmp%21#0",
+        "tmp%23#0"
+      ],
+      "stack_out": [
+        "tmp%21#0",
+        "tmp%23#0",
+        "reinterpret_bytes[8]%2#0"
+      ]
+    },
+    "189": {
+      "op": "btoi",
+      "defined_out": [
+        "tmp%21#0",
+        "tmp%23#0",
+        "tmp%24#0"
+      ],
+      "stack_out": [
+        "tmp%21#0",
+        "tmp%23#0",
+        "tmp%24#0"
+      ]
+    },
+    "190": {
+      "callsub": "smart_contracts.txn_validator.contract.TxnValidator.validate_transaction",
+      "op": "callsub validate_transaction",
+      "defined_out": [
+        "to_encode%0#0"
+      ],
+      "stack_out": [
+        "to_encode%0#0"
+      ]
+    },
+    "193": {
+      "op": "itob",
+      "defined_out": [
+        "val_as_bytes%0#0"
+      ],
+      "stack_out": [
+        "val_as_bytes%0#0"
+      ]
+    },
+    "194": {
+      "op": "bytec_3 // 0x151f7c75",
+      "defined_out": [
+        "0x151f7c75",
+        "val_as_bytes%0#0"
+      ],
+      "stack_out": [
+        "val_as_bytes%0#0",
+        "0x151f7c75"
+      ]
+    },
+    "195": {
+      "op": "swap",
+      "stack_out": [
+        "0x151f7c75",
+        "val_as_bytes%0#0"
+      ]
+    },
+    "196": {
+      "op": "concat",
+      "defined_out": [
+        "tmp%25#0"
+      ],
+      "stack_out": [
+        "tmp%25#0"
+      ]
+    },
+    "197": {
+      "op": "log",
+      "stack_out": []
+    },
+    "198": {
+      "op": "intc_0 // 1",
+      "defined_out": [
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0"
+      ]
+    },
+    "199": {
+      "op": "return",
+      "stack_out": []
+    },
+    "200": {
+      "block": "main_set_wallet_block_status_route@6",
+      "stack_in": [],
+      "op": "txn OnCompletion",
+      "defined_out": [
+        "tmp%9#0"
+      ],
+      "stack_out": [
+        "tmp%9#0"
+      ]
+    },
+    "202": {
+      "op": "!",
+      "defined_out": [
+        "tmp%10#0"
+      ],
+      "stack_out": [
+        "tmp%10#0"
+      ]
+    },
+    "203": {
+      "error": "OnCompletion is not NoOp",
+      "op": "assert // OnCompletion is not NoOp",
+      "stack_out": []
+    },
+    "204": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%11#0"
+      ],
+      "stack_out": [
+        "tmp%11#0"
+      ]
+    },
+    "206": {
+      "error": "can only call when not creating",
+      "op": "assert // can only call when not creating",
+      "stack_out": []
+    },
+    "207": {
+      "op": "txna ApplicationArgs 1",
+      "defined_out": [
+        "reinterpret_bytes[1]%0#0"
+      ],
+      "stack_out": [
+        "reinterpret_bytes[1]%0#0"
+      ]
+    },
+    "210": {
+      "op": "btoi",
+      "defined_out": [
+        "tmp%13#0"
+      ],
+      "stack_out": [
+        "tmp%13#0"
+      ]
+    },
+    "211": {
+      "op": "txnas Accounts",
+      "defined_out": [
+        "tmp%14#0"
+      ],
+      "stack_out": [
+        "tmp%14#0"
+      ]
+    },
+    "213": {
+      "op": "txna ApplicationArgs 2",
+      "defined_out": [
+        "reinterpret_bytes[1]%1#0",
+        "tmp%14#0"
+      ],
+      "stack_out": [
+        "tmp%14#0",
+        "reinterpret_bytes[1]%1#0"
+      ]
+    },
+    "216": {
+      "op": "intc_1 // 0",
+      "defined_out": [
+        "0",
+        "reinterpret_bytes[1]%1#0",
+        "tmp%14#0"
+      ],
+      "stack_out": [
+        "tmp%14#0",
+        "reinterpret_bytes[1]%1#0",
+        "0"
+      ]
+    },
+    "217": {
+      "op": "getbit",
+      "defined_out": [
+        "tmp%14#0",
+        "tmp%15#0"
+      ],
+      "stack_out": [
+        "tmp%14#0",
+        "tmp%15#0"
+      ]
+    },
+    "218": {
+      "callsub": "smart_contracts.txn_validator.contract.TxnValidator.set_wallet_block_status",
+      "op": "callsub set_wallet_block_status",
+      "stack_out": []
+    },
+    "221": {
+      "op": "intc_0 // 1",
+      "defined_out": [
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0"
+      ]
+    },
+    "222": {
+      "op": "return",
+      "stack_out": []
+    },
+    "223": {
+      "block": "main_configure_route@5",
+      "stack_in": [],
+      "op": "txn OnCompletion",
+      "defined_out": [
+        "tmp%3#0"
+      ],
+      "stack_out": [
+        "tmp%3#0"
+      ]
+    },
+    "225": {
+      "op": "!",
+      "defined_out": [
+        "tmp%4#0"
+      ],
+      "stack_out": [
+        "tmp%4#0"
+      ]
+    },
+    "226": {
+      "error": "OnCompletion is not NoOp",
+      "op": "assert // OnCompletion is not NoOp",
+      "stack_out": []
+    },
+    "227": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%5#0"
+      ],
+      "stack_out": [
+        "tmp%5#0"
+      ]
+    },
+    "229": {
+      "error": "can only call when not creating",
+      "op": "assert // can only call when not creating",
+      "stack_out": []
+    },
+    "230": {
+      "op": "txna ApplicationArgs 1",
+      "defined_out": [
+        "reinterpret_bytes[8]%0#0"
+      ],
+      "stack_out": [
+        "reinterpret_bytes[8]%0#0"
+      ]
+    },
+    "233": {
+      "op": "btoi",
+      "defined_out": [
+        "tmp%7#0"
+      ],
+      "stack_out": [
+        "tmp%7#0"
+      ]
+    },
+    "234": {
+      "op": "txna ApplicationArgs 2",
+      "defined_out": [
+        "reinterpret_bytes[8]%1#0",
+        "tmp%7#0"
+      ],
+      "stack_out": [
+        "tmp%7#0",
+        "reinterpret_bytes[8]%1#0"
+      ]
+    },
+    "237": {
+      "op": "btoi",
+      "defined_out": [
+        "tmp%7#0",
+        "tmp%8#0"
+      ],
+      "stack_out": [
+        "tmp%7#0",
+        "tmp%8#0"
+      ]
+    },
+    "238": {
+      "callsub": "smart_contracts.txn_validator.contract.TxnValidator.configure",
+      "op": "callsub configure",
+      "stack_out": []
+    },
+    "241": {
+      "op": "intc_0 // 1",
+      "defined_out": [
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0"
+      ]
+    },
+    "242": {
+      "op": "return",
+      "stack_out": []
+    },
+    "243": {
+      "block": "main_bare_routing@10",
+      "stack_in": [],
+      "op": "txn OnCompletion",
+      "defined_out": [
+        "tmp%38#0"
+      ],
+      "stack_out": [
+        "tmp%38#0"
+      ]
+    },
+    "245": {
+      "op": "bnz main_after_if_else@12",
+      "stack_out": []
+    },
+    "248": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%39#0"
+      ],
+      "stack_out": [
+        "tmp%39#0"
+      ]
+    },
+    "250": {
+      "op": "!",
+      "defined_out": [
+        "tmp%40#0"
+      ],
+      "stack_out": [
+        "tmp%40#0"
+      ]
+    },
+    "251": {
+      "error": "can only call when creating",
+      "op": "assert // can only call when creating",
+      "stack_out": []
+    },
+    "252": {
+      "op": "intc_0 // 1",
+      "defined_out": [
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0"
+      ]
+    },
+    "253": {
+      "op": "return",
+      "stack_out": []
+    },
+    "254": {
+      "subroutine": "smart_contracts.txn_validator.contract.TxnValidator.configure",
+      "params": {
+        "max_amount_micro_algo#0": "uint64",
+        "alert_threshold#0": "uint64"
+      },
+      "block": "configure",
+      "stack_in": [],
+      "op": "proto 2 0"
+    },
+    "257": {
+      "op": "txn Sender",
+      "defined_out": [
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0"
+      ]
+    },
+    "259": {
+      "op": "global CreatorAddress",
+      "defined_out": [
+        "tmp%0#0",
+        "tmp%1#0"
+      ],
+      "stack_out": [
+        "tmp%0#0",
+        "tmp%1#0"
+      ]
+    },
+    "261": {
+      "op": "==",
+      "defined_out": [
+        "tmp%2#0"
+      ],
+      "stack_out": [
+        "tmp%2#0"
+      ]
+    },
+    "262": {
+      "error": "Only creator can configure",
+      "op": "assert // Only creator can configure",
+      "stack_out": []
+    },
+    "263": {
+      "op": "frame_dig -1",
+      "defined_out": [
+        "alert_threshold#0 (copy)"
+      ],
+      "stack_out": [
+        "alert_threshold#0 (copy)"
+      ]
+    },
+    "265": {
+      "op": "intc_2 // 100",
+      "defined_out": [
+        "100",
+        "alert_threshold#0 (copy)"
+      ],
+      "stack_out": [
+        "alert_threshold#0 (copy)",
+        "100"
+      ]
+    },
+    "266": {
+      "op": "<=",
+      "defined_out": [
+        "tmp%3#0"
+      ],
+      "stack_out": [
+        "tmp%3#0"
+      ]
+    },
+    "267": {
+      "error": "Threshold must be <= 100",
+      "op": "assert // Threshold must be <= 100",
+      "stack_out": []
+    },
+    "268": {
+      "op": "bytec_0 // \"max_amount_micro_algo\"",
+      "defined_out": [
+        "\"max_amount_micro_algo\""
+      ],
+      "stack_out": [
+        "\"max_amount_micro_algo\""
+      ]
+    },
+    "269": {
+      "op": "frame_dig -2",
+      "defined_out": [
+        "\"max_amount_micro_algo\"",
+        "max_amount_micro_algo#0 (copy)"
+      ],
+      "stack_out": [
+        "\"max_amount_micro_algo\"",
+        "max_amount_micro_algo#0 (copy)"
+      ]
+    },
+    "271": {
+      "op": "app_global_put",
+      "stack_out": []
+    },
+    "272": {
+      "op": "bytec_2 // \"alert_threshold\"",
+      "defined_out": [
+        "\"alert_threshold\""
+      ],
+      "stack_out": [
+        "\"alert_threshold\""
+      ]
+    },
+    "273": {
+      "op": "frame_dig -1",
+      "stack_out": [
+        "\"alert_threshold\"",
+        "alert_threshold#0 (copy)"
+      ]
+    },
+    "275": {
+      "op": "app_global_put",
+      "stack_out": []
+    },
+    "276": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "277": {
+      "subroutine": "smart_contracts.txn_validator.contract.TxnValidator.set_wallet_block_status",
+      "params": {
+        "wallet#0": "bytes",
+        "blocked#0": "uint64"
+      },
+      "block": "set_wallet_block_status",
+      "stack_in": [],
+      "op": "proto 2 0"
+    },
+    "280": {
+      "op": "txn Sender",
+      "defined_out": [
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0"
+      ]
+    },
+    "282": {
+      "op": "global CreatorAddress",
+      "defined_out": [
+        "tmp%0#0",
+        "tmp%1#0"
+      ],
+      "stack_out": [
+        "tmp%0#0",
+        "tmp%1#0"
+      ]
+    },
+    "284": {
+      "op": "==",
+      "defined_out": [
+        "tmp%2#0"
+      ],
+      "stack_out": [
+        "tmp%2#0"
+      ]
+    },
+    "285": {
+      "error": "Only creator can manage blocklist",
+      "op": "assert // Only creator can manage blocklist",
+      "stack_out": []
+    },
+    "286": {
+      "op": "bytec_1 // \"bl_\"",
+      "defined_out": [
+        "\"bl_\""
+      ],
+      "stack_out": [
+        "\"bl_\""
+      ]
+    },
+    "287": {
+      "op": "frame_dig -2",
+      "defined_out": [
+        "\"bl_\"",
+        "wallet#0 (copy)"
+      ],
+      "stack_out": [
+        "\"bl_\"",
+        "wallet#0 (copy)"
+      ]
+    },
+    "289": {
+      "op": "concat",
+      "defined_out": [
+        "tmp%3#0"
+      ],
+      "stack_out": [
+        "tmp%3#0"
+      ]
+    },
+    "290": {
+      "op": "frame_dig -1",
+      "defined_out": [
+        "blocked#0 (copy)",
+        "tmp%3#0"
+      ],
+      "stack_out": [
+        "tmp%3#0",
+        "blocked#0 (copy)"
+      ]
+    },
+    "292": {
+      "op": "itob",
+      "defined_out": [
+        "new_box_value%0#0",
+        "tmp%3#0"
+      ],
+      "stack_out": [
+        "tmp%3#0",
+        "new_box_value%0#0"
+      ]
+    },
+    "293": {
+      "op": "box_put",
+      "stack_out": []
+    },
+    "294": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "295": {
+      "subroutine": "smart_contracts.txn_validator.contract.TxnValidator.validate_transaction",
+      "params": {
+        "sender#0": "bytes",
+        "receiver#0": "bytes",
+        "amount#0": "uint64"
+      },
+      "block": "validate_transaction",
+      "stack_in": [],
+      "op": "proto 3 1"
+    },
+    "298": {
+      "op": "pushbytes \"\"",
+      "stack_out": [
+        "scaled#0"
+      ]
+    },
+    "300": {
+      "op": "frame_dig -3",
+      "defined_out": [
+        "sender#0 (copy)"
+      ],
+      "stack_out": [
+        "scaled#0",
+        "sender#0 (copy)"
+      ]
+    },
+    "302": {
+      "op": "frame_dig -2",
+      "defined_out": [
+        "receiver#0 (copy)",
+        "sender#0 (copy)"
+      ],
+      "stack_out": [
+        "scaled#0",
+        "sender#0 (copy)",
+        "receiver#0 (copy)"
+      ]
+    },
+    "304": {
+      "op": "!=",
+      "defined_out": [
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "scaled#0",
+        "tmp%0#0"
+      ]
+    },
+    "305": {
+      "error": "Sender and receiver must differ",
+      "op": "assert // Sender and receiver must differ",
+      "stack_out": [
+        "scaled#0"
+      ]
+    },
+    "306": {
+      "op": "frame_dig -1",
+      "defined_out": [
+        "amount#0 (copy)"
+      ],
+      "stack_out": [
+        "scaled#0",
+        "amount#0 (copy)"
+      ]
+    },
+    "308": {
+      "error": "Amount must be > 0",
+      "op": "assert // Amount must be > 0",
+      "stack_out": [
+        "scaled#0"
+      ]
+    },
+    "309": {
+      "op": "bytec_1 // \"bl_\"",
+      "defined_out": [
+        "\"bl_\""
+      ],
+      "stack_out": [
+        "scaled#0",
+        "\"bl_\""
+      ]
+    },
+    "310": {
+      "op": "frame_dig -3",
+      "stack_out": [
+        "scaled#0",
+        "\"bl_\"",
+        "sender#0 (copy)"
+      ]
+    },
+    "312": {
+      "op": "concat",
+      "defined_out": [
+        "tmp%2#0"
+      ],
+      "stack_out": [
+        "scaled#0",
+        "tmp%2#0"
+      ]
+    },
+    "313": {
+      "op": "box_get",
+      "defined_out": [
+        "maybe_value%0#0",
+        "sender_exists#0"
+      ],
+      "stack_out": [
+        "scaled#0",
+        "maybe_value%0#0",
+        "sender_exists#0"
+      ]
+    },
+    "314": {
+      "op": "swap",
+      "stack_out": [
+        "scaled#0",
+        "sender_exists#0",
+        "maybe_value%0#0"
+      ]
+    },
+    "315": {
+      "op": "btoi",
+      "defined_out": [
+        "sender_blocked#0",
+        "sender_exists#0"
+      ],
+      "stack_out": [
+        "scaled#0",
+        "sender_exists#0",
+        "sender_blocked#0"
+      ]
+    },
+    "316": {
+      "op": "swap",
+      "defined_out": [
+        "sender_blocked#0",
+        "sender_exists#0"
+      ],
+      "stack_out": [
+        "scaled#0",
+        "sender_blocked#0",
+        "sender_exists#0"
+      ]
+    },
+    "317": {
+      "op": "bytec_1 // \"bl_\"",
+      "stack_out": [
+        "scaled#0",
+        "sender_blocked#0",
+        "sender_exists#0",
+        "\"bl_\""
+      ]
+    },
+    "318": {
+      "op": "frame_dig -2",
+      "stack_out": [
+        "scaled#0",
+        "sender_blocked#0",
+        "sender_exists#0",
+        "\"bl_\"",
+        "receiver#0 (copy)"
+      ]
+    },
+    "320": {
+      "op": "concat",
+      "defined_out": [
+        "sender_blocked#0",
+        "sender_exists#0",
+        "tmp%3#0"
+      ],
+      "stack_out": [
+        "scaled#0",
+        "sender_blocked#0",
+        "sender_exists#0",
+        "tmp%3#0"
+      ]
+    },
+    "321": {
+      "op": "box_get",
+      "defined_out": [
+        "maybe_value%1#0",
+        "receiver_exists#0",
+        "sender_blocked#0",
+        "sender_exists#0"
+      ],
+      "stack_out": [
+        "scaled#0",
+        "sender_blocked#0",
+        "sender_exists#0",
+        "maybe_value%1#0",
+        "receiver_exists#0"
+      ]
+    },
+    "322": {
+      "op": "cover 2",
+      "defined_out": [
+        "maybe_value%1#0",
+        "receiver_exists#0",
+        "sender_blocked#0",
+        "sender_exists#0"
+      ],
+      "stack_out": [
+        "scaled#0",
+        "sender_blocked#0",
+        "receiver_exists#0",
+        "sender_exists#0",
+        "maybe_value%1#0"
+      ]
+    },
+    "324": {
+      "op": "btoi",
+      "defined_out": [
+        "receiver_blocked#0",
+        "receiver_exists#0",
+        "sender_blocked#0",
+        "sender_exists#0"
+      ],
+      "stack_out": [
+        "scaled#0",
+        "sender_blocked#0",
+        "receiver_exists#0",
+        "sender_exists#0",
+        "receiver_blocked#0"
+      ]
+    },
+    "325": {
+      "op": "swap",
+      "stack_out": [
+        "scaled#0",
+        "sender_blocked#0",
+        "receiver_exists#0",
+        "receiver_blocked#0",
+        "sender_exists#0"
+      ]
+    },
+    "326": {
+      "op": "bz validate_transaction_or_contd@2",
+      "stack_out": [
+        "scaled#0",
+        "sender_blocked#0",
+        "receiver_exists#0",
+        "receiver_blocked#0"
+      ]
+    },
+    "329": {
+      "op": "frame_dig 1",
+      "stack_out": [
+        "scaled#0",
+        "sender_blocked#0",
+        "receiver_exists#0",
+        "receiver_blocked#0",
+        "sender_blocked#0"
+      ]
+    },
+    "331": {
+      "op": "intc_0 // 1",
+      "defined_out": [
+        "1",
+        "receiver_blocked#0",
+        "receiver_exists#0",
+        "sender_blocked#0"
+      ],
+      "stack_out": [
+        "scaled#0",
+        "sender_blocked#0",
+        "receiver_exists#0",
+        "receiver_blocked#0",
+        "sender_blocked#0",
+        "1"
+      ]
+    },
+    "332": {
+      "op": "==",
+      "defined_out": [
+        "receiver_blocked#0",
+        "receiver_exists#0",
+        "sender_blocked#0",
+        "tmp%4#0"
+      ],
+      "stack_out": [
+        "scaled#0",
+        "sender_blocked#0",
+        "receiver_exists#0",
+        "receiver_blocked#0",
+        "tmp%4#0"
+      ]
+    },
+    "333": {
+      "op": "bnz validate_transaction_if_body@4",
+      "stack_out": [
+        "scaled#0",
+        "sender_blocked#0",
+        "receiver_exists#0",
+        "receiver_blocked#0"
+      ]
+    },
+    "336": {
+      "block": "validate_transaction_or_contd@2",
+      "stack_in": [
+        "scaled#0",
+        "sender_blocked#0",
+        "receiver_exists#0",
+        "receiver_blocked#0"
+      ],
+      "op": "frame_dig 2",
+      "defined_out": [
+        "receiver_exists#0"
+      ],
+      "stack_out": [
+        "scaled#0",
+        "sender_blocked#0",
+        "receiver_exists#0",
+        "receiver_blocked#0",
+        "receiver_exists#0"
+      ]
+    },
+    "338": {
+      "op": "bz validate_transaction_after_if_else@5",
+      "stack_out": [
+        "scaled#0",
+        "sender_blocked#0",
+        "receiver_exists#0",
+        "receiver_blocked#0"
+      ]
+    },
+    "341": {
+      "op": "frame_dig 3",
+      "defined_out": [
+        "receiver_blocked#0",
+        "receiver_exists#0"
+      ],
+      "stack_out": [
+        "scaled#0",
+        "sender_blocked#0",
+        "receiver_exists#0",
+        "receiver_blocked#0",
+        "receiver_blocked#0"
+      ]
+    },
+    "343": {
+      "op": "intc_0 // 1",
+      "defined_out": [
+        "1",
+        "receiver_blocked#0",
+        "receiver_exists#0"
+      ],
+      "stack_out": [
+        "scaled#0",
+        "sender_blocked#0",
+        "receiver_exists#0",
+        "receiver_blocked#0",
+        "receiver_blocked#0",
+        "1"
+      ]
+    },
+    "344": {
+      "op": "==",
+      "defined_out": [
+        "receiver_blocked#0",
+        "receiver_exists#0",
+        "tmp%5#0"
+      ],
+      "stack_out": [
+        "scaled#0",
+        "sender_blocked#0",
+        "receiver_exists#0",
+        "receiver_blocked#0",
+        "tmp%5#0"
+      ]
+    },
+    "345": {
+      "op": "bz validate_transaction_after_if_else@5",
+      "stack_out": [
+        "scaled#0",
+        "sender_blocked#0",
+        "receiver_exists#0",
+        "receiver_blocked#0"
+      ]
+    },
+    "348": {
+      "block": "validate_transaction_if_body@4",
+      "stack_in": [
+        "scaled#0",
+        "sender_blocked#0",
+        "receiver_exists#0",
+        "receiver_blocked#0"
+      ],
+      "op": "intc_2 // 100",
+      "defined_out": [
+        "100"
+      ],
+      "stack_out": [
+        "scaled#0",
+        "sender_blocked#0",
+        "receiver_exists#0",
+        "receiver_blocked#0",
+        "100"
+      ]
+    },
+    "349": {
+      "op": "frame_bury 0"
+    },
+    "351": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "352": {
+      "block": "validate_transaction_after_if_else@5",
+      "stack_in": [
+        "scaled#0",
+        "sender_blocked#0",
+        "receiver_exists#0",
+        "receiver_blocked#0"
+      ],
+      "op": "intc_1 // 0",
+      "defined_out": [
+        "0"
+      ],
+      "stack_out": [
+        "scaled#0",
+        "sender_blocked#0",
+        "receiver_exists#0",
+        "receiver_blocked#0",
+        "0"
+      ]
+    },
+    "353": {
+      "op": "bytec_0 // \"max_amount_micro_algo\"",
+      "defined_out": [
+        "\"max_amount_micro_algo\"",
+        "0"
+      ],
+      "stack_out": [
+        "scaled#0",
+        "sender_blocked#0",
+        "receiver_exists#0",
+        "receiver_blocked#0",
+        "0",
+        "\"max_amount_micro_algo\""
+      ]
+    },
+    "354": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "maybe_exists%2#0",
+        "maybe_value%2#0"
+      ],
+      "stack_out": [
+        "scaled#0",
+        "sender_blocked#0",
+        "receiver_exists#0",
+        "receiver_blocked#0",
+        "maybe_value%2#0",
+        "maybe_exists%2#0"
+      ]
+    },
+    "355": {
+      "error": "check self.max_amount_micro_algo exists",
+      "op": "assert // check self.max_amount_micro_algo exists",
+      "stack_out": [
+        "scaled#0",
+        "sender_blocked#0",
+        "receiver_exists#0",
+        "receiver_blocked#0",
+        "maybe_value%2#0"
+      ]
+    },
+    "356": {
+      "op": "frame_dig -1",
+      "defined_out": [
+        "amount#0 (copy)",
+        "maybe_value%2#0"
+      ],
+      "stack_out": [
+        "scaled#0",
+        "sender_blocked#0",
+        "receiver_exists#0",
+        "receiver_blocked#0",
+        "maybe_value%2#0",
+        "amount#0 (copy)"
+      ]
+    },
+    "358": {
+      "op": "<",
+      "defined_out": [
+        "tmp%6#0"
+      ],
+      "stack_out": [
+        "scaled#0",
+        "sender_blocked#0",
+        "receiver_exists#0",
+        "receiver_blocked#0",
+        "tmp%6#0"
+      ]
+    },
+    "359": {
+      "op": "bz validate_transaction_after_if_else@7",
+      "stack_out": [
+        "scaled#0",
+        "sender_blocked#0",
+        "receiver_exists#0",
+        "receiver_blocked#0"
+      ]
+    },
+    "362": {
+      "op": "pushint 85 // 85",
+      "defined_out": [
+        "85"
+      ],
+      "stack_out": [
+        "scaled#0",
+        "sender_blocked#0",
+        "receiver_exists#0",
+        "receiver_blocked#0",
+        "85"
+      ]
+    },
+    "364": {
+      "op": "frame_bury 0"
+    },
+    "366": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "367": {
+      "block": "validate_transaction_after_if_else@7",
+      "stack_in": [
+        "scaled#0",
+        "sender_blocked#0",
+        "receiver_exists#0",
+        "receiver_blocked#0"
+      ],
+      "op": "frame_dig -1",
+      "defined_out": [
+        "amount#0 (copy)"
+      ],
+      "stack_out": [
+        "scaled#0",
+        "sender_blocked#0",
+        "receiver_exists#0",
+        "receiver_blocked#0",
+        "amount#0 (copy)"
+      ]
+    },
+    "369": {
+      "op": "intc_2 // 100",
+      "defined_out": [
+        "100",
+        "amount#0 (copy)"
+      ],
+      "stack_out": [
+        "scaled#0",
+        "sender_blocked#0",
+        "receiver_exists#0",
+        "receiver_blocked#0",
+        "amount#0 (copy)",
+        "100"
+      ]
+    },
+    "370": {
+      "op": "*",
+      "defined_out": [
+        "tmp%7#0"
+      ],
+      "stack_out": [
+        "scaled#0",
+        "sender_blocked#0",
+        "receiver_exists#0",
+        "receiver_blocked#0",
+        "tmp%7#0"
+      ]
+    },
+    "371": {
+      "op": "intc_1 // 0",
+      "defined_out": [
+        "0",
+        "tmp%7#0"
+      ],
+      "stack_out": [
+        "scaled#0",
+        "sender_blocked#0",
+        "receiver_exists#0",
+        "receiver_blocked#0",
+        "tmp%7#0",
+        "0"
+      ]
+    },
+    "372": {
+      "op": "bytec_0 // \"max_amount_micro_algo\"",
+      "defined_out": [
+        "\"max_amount_micro_algo\"",
+        "0",
+        "tmp%7#0"
+      ],
+      "stack_out": [
+        "scaled#0",
+        "sender_blocked#0",
+        "receiver_exists#0",
+        "receiver_blocked#0",
+        "tmp%7#0",
+        "0",
+        "\"max_amount_micro_algo\""
+      ]
+    },
+    "373": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "maybe_exists%3#0",
+        "maybe_value%3#0",
+        "tmp%7#0"
+      ],
+      "stack_out": [
+        "scaled#0",
+        "sender_blocked#0",
+        "receiver_exists#0",
+        "receiver_blocked#0",
+        "tmp%7#0",
+        "maybe_value%3#0",
+        "maybe_exists%3#0"
+      ]
+    },
+    "374": {
+      "error": "check self.max_amount_micro_algo exists",
+      "op": "assert // check self.max_amount_micro_algo exists",
+      "stack_out": [
+        "scaled#0",
+        "sender_blocked#0",
+        "receiver_exists#0",
+        "receiver_blocked#0",
+        "tmp%7#0",
+        "maybe_value%3#0"
+      ]
+    },
+    "375": {
+      "op": "/",
+      "defined_out": [
+        "scaled#0"
+      ],
+      "stack_out": [
+        "scaled#0",
+        "sender_blocked#0",
+        "receiver_exists#0",
+        "receiver_blocked#0",
+        "scaled#0"
+      ]
+    },
+    "376": {
+      "op": "dup",
+      "stack_out": [
+        "scaled#0",
+        "sender_blocked#0",
+        "receiver_exists#0",
+        "receiver_blocked#0",
+        "scaled#0",
+        "scaled#0"
+      ]
+    },
+    "377": {
+      "op": "frame_bury 0",
+      "defined_out": [
+        "scaled#0"
+      ],
+      "stack_out": [
+        "scaled#0",
+        "sender_blocked#0",
+        "receiver_exists#0",
+        "receiver_blocked#0",
+        "scaled#0"
+      ]
+    },
+    "379": {
+      "op": "intc_2 // 100",
+      "stack_out": [
+        "scaled#0",
+        "sender_blocked#0",
+        "receiver_exists#0",
+        "receiver_blocked#0",
+        "scaled#0",
+        "100"
+      ]
+    },
+    "380": {
+      "op": ">",
+      "defined_out": [
+        "scaled#0",
+        "tmp%8#0"
+      ],
+      "stack_out": [
+        "scaled#0",
+        "sender_blocked#0",
+        "receiver_exists#0",
+        "receiver_blocked#0",
+        "tmp%8#0"
+      ]
+    },
+    "381": {
+      "op": "bz validate_transaction_after_if_else@9",
+      "stack_out": [
+        "scaled#0",
+        "sender_blocked#0",
+        "receiver_exists#0",
+        "receiver_blocked#0"
+      ]
+    },
+    "384": {
+      "op": "intc_2 // 100",
+      "stack_out": [
+        "scaled#0",
+        "sender_blocked#0",
+        "receiver_exists#0",
+        "receiver_blocked#0",
+        "100"
+      ]
+    },
+    "385": {
+      "op": "frame_bury 0"
+    },
+    "387": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "388": {
+      "block": "validate_transaction_after_if_else@9",
+      "stack_in": [
+        "scaled#0",
+        "sender_blocked#0",
+        "receiver_exists#0",
+        "receiver_blocked#0"
+      ],
+      "retsub": true,
+      "op": "retsub",
+      "defined_out": [
+        "scaled#0"
+      ],
+      "stack_out": [
+        "scaled#0",
+        "sender_blocked#0",
+        "receiver_exists#0",
+        "receiver_blocked#0",
+        "scaled#0"
+      ]
+    },
+    "389": {
+      "subroutine": "smart_contracts.txn_validator.contract.TxnValidator.is_wallet_blocked",
+      "params": {
+        "wallet#0": "bytes"
+      },
+      "block": "is_wallet_blocked",
+      "stack_in": [],
+      "op": "proto 1 1"
+    },
+    "392": {
+      "op": "bytec_1 // \"bl_\"",
+      "defined_out": [
+        "\"bl_\""
+      ],
+      "stack_out": [
+        "\"bl_\""
+      ]
+    },
+    "393": {
+      "op": "frame_dig -1",
+      "defined_out": [
+        "\"bl_\"",
+        "wallet#0 (copy)"
+      ],
+      "stack_out": [
+        "\"bl_\"",
+        "wallet#0 (copy)"
+      ]
+    },
+    "395": {
+      "op": "concat",
+      "defined_out": [
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0"
+      ]
+    },
+    "396": {
+      "op": "box_get",
+      "defined_out": [
+        "exists#0",
+        "maybe_value%0#0"
+      ],
+      "stack_out": [
+        "maybe_value%0#0",
+        "exists#0"
+      ]
+    },
+    "397": {
+      "op": "swap",
+      "stack_out": [
+        "exists#0",
+        "maybe_value%0#0"
+      ]
+    },
+    "398": {
+      "op": "btoi",
+      "defined_out": [
+        "exists#0",
+        "status#0"
+      ],
+      "stack_out": [
+        "exists#0",
+        "status#0"
+      ]
+    },
+    "399": {
+      "op": "swap",
+      "defined_out": [
+        "exists#0",
+        "status#0"
+      ],
+      "stack_out": [
+        "status#0",
+        "exists#0"
+      ]
+    },
+    "400": {
+      "op": "bz is_wallet_blocked_bool_false@3",
+      "stack_out": [
+        "status#0"
+      ]
+    },
+    "403": {
+      "op": "frame_dig 0",
+      "stack_out": [
+        "status#0",
+        "status#0"
+      ]
+    },
+    "405": {
+      "op": "intc_0 // 1",
+      "defined_out": [
+        "1",
+        "status#0"
+      ],
+      "stack_out": [
+        "status#0",
+        "status#0",
+        "1"
+      ]
+    },
+    "406": {
+      "op": "==",
+      "defined_out": [
+        "status#0",
+        "tmp%1#0"
+      ],
+      "stack_out": [
+        "status#0",
+        "tmp%1#0"
+      ]
+    },
+    "407": {
+      "op": "bz is_wallet_blocked_bool_false@3",
+      "stack_out": [
+        "status#0"
+      ]
+    },
+    "410": {
+      "op": "intc_0 // 1",
+      "defined_out": [
+        "and_result%0#0",
+        "status#0"
+      ],
+      "stack_out": [
+        "status#0",
+        "and_result%0#0"
+      ]
+    },
+    "411": {
+      "block": "is_wallet_blocked_bool_merge@4",
+      "stack_in": [
+        "status#0",
+        "and_result%0#0"
+      ],
+      "op": "swap",
+      "defined_out": [
+        "and_result%0#0"
+      ]
+    },
+    "412": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "413": {
+      "block": "is_wallet_blocked_bool_false@3",
+      "stack_in": [
+        "status#0"
+      ],
+      "op": "intc_1 // 0",
+      "defined_out": [
+        "and_result%0#0"
+      ],
+      "stack_out": [
+        "status#0",
+        "and_result%0#0"
+      ]
+    },
+    "414": {
+      "op": "b is_wallet_blocked_bool_merge@4"
+    },
+    "417": {
+      "subroutine": "smart_contracts.txn_validator.contract.TxnValidator.get_threshold",
+      "params": {},
+      "block": "get_threshold",
+      "stack_in": [],
+      "op": "intc_1 // 0",
+      "defined_out": [
+        "0"
+      ],
+      "stack_out": [
+        "0"
+      ]
+    },
+    "418": {
+      "op": "bytec_2 // \"alert_threshold\"",
+      "defined_out": [
+        "\"alert_threshold\"",
+        "0"
+      ],
+      "stack_out": [
+        "0",
+        "\"alert_threshold\""
+      ]
+    },
+    "419": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "maybe_exists%0#0",
+        "maybe_value%0#0"
+      ],
+      "stack_out": [
+        "maybe_value%0#0",
+        "maybe_exists%0#0"
+      ]
+    },
+    "420": {
+      "error": "check self.alert_threshold exists",
+      "op": "assert // check self.alert_threshold exists",
+      "stack_out": [
+        "maybe_value%0#0"
+      ]
+    },
+    "421": {
+      "retsub": true,
+      "op": "retsub"
+    }
+  }
+}

@@ -1,0 +1,433 @@
+#pragma version 10
+#pragma typetrack false
+
+// smart_contracts.certificate_manager.contract.CertificateManager.__algopy_entrypoint_with_init() -> uint64:
+main:
+    intcblock 1 0
+    bytecblock 0x151f7c75 "cm_act_" "next_certificate_id" 0x00 "cm_owner_" "cm_meta_" "cm_exp_"
+    txn ApplicationID
+    bnz main_after_if_else@2
+    // smart_contracts/certificate_manager/contract.py:13
+    // self.next_certificate_id = UInt64(1)
+    bytec_2 // "next_certificate_id"
+    intc_0 // 1
+    app_global_put
+
+main_after_if_else@2:
+    // smart_contracts/certificate_manager/contract.py:5
+    // class CertificateManager(ARC4Contract):
+    txn NumAppArgs
+    bz main_bare_routing@10
+    pushbytess 0x7d48b254 0xf1be2579 0x7e60d331 0x797f6206 0x68f3f3c1 // method "issue_certificate(account,string,uint64)uint64", method "revoke_certificate(uint64)void", method "verify_certificate(uint64,account)bool", method "get_certificate_metadata(uint64)string", method "is_certificate_active(uint64)bool"
+    txna ApplicationArgs 0
+    match main_issue_certificate_route@5 main_revoke_certificate_route@6 main_verify_certificate_route@7 main_get_certificate_metadata_route@8 main_is_certificate_active_route@9
+
+main_after_if_else@12:
+    // smart_contracts/certificate_manager/contract.py:5
+    // class CertificateManager(ARC4Contract):
+    intc_1 // 0
+    return
+
+main_is_certificate_active_route@9:
+    // smart_contracts/certificate_manager/contract.py:62
+    // @abimethod(readonly=True)
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    // smart_contracts/certificate_manager/contract.py:5
+    // class CertificateManager(ARC4Contract):
+    txna ApplicationArgs 1
+    btoi
+    // smart_contracts/certificate_manager/contract.py:62
+    // @abimethod(readonly=True)
+    callsub is_certificate_active
+    bytec_3 // 0x00
+    intc_1 // 0
+    uncover 2
+    setbit
+    bytec_0 // 0x151f7c75
+    swap
+    concat
+    log
+    intc_0 // 1
+    return
+
+main_get_certificate_metadata_route@8:
+    // smart_contracts/certificate_manager/contract.py:55
+    // @abimethod(readonly=True)
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    // smart_contracts/certificate_manager/contract.py:5
+    // class CertificateManager(ARC4Contract):
+    txna ApplicationArgs 1
+    btoi
+    // smart_contracts/certificate_manager/contract.py:55
+    // @abimethod(readonly=True)
+    callsub get_certificate_metadata
+    dup
+    len
+    itob
+    extract 6 2
+    swap
+    concat
+    bytec_0 // 0x151f7c75
+    swap
+    concat
+    log
+    intc_0 // 1
+    return
+
+main_verify_certificate_route@7:
+    // smart_contracts/certificate_manager/contract.py:41
+    // @abimethod(readonly=True)
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    // smart_contracts/certificate_manager/contract.py:5
+    // class CertificateManager(ARC4Contract):
+    txna ApplicationArgs 1
+    btoi
+    txna ApplicationArgs 2
+    btoi
+    txnas Accounts
+    // smart_contracts/certificate_manager/contract.py:41
+    // @abimethod(readonly=True)
+    callsub verify_certificate
+    bytec_3 // 0x00
+    intc_1 // 0
+    uncover 2
+    setbit
+    bytec_0 // 0x151f7c75
+    swap
+    concat
+    log
+    intc_0 // 1
+    return
+
+main_revoke_certificate_route@6:
+    // smart_contracts/certificate_manager/contract.py:35
+    // @abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    // smart_contracts/certificate_manager/contract.py:5
+    // class CertificateManager(ARC4Contract):
+    txna ApplicationArgs 1
+    btoi
+    // smart_contracts/certificate_manager/contract.py:35
+    // @abimethod()
+    callsub revoke_certificate
+    intc_0 // 1
+    return
+
+main_issue_certificate_route@5:
+    // smart_contracts/certificate_manager/contract.py:15
+    // @abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    // smart_contracts/certificate_manager/contract.py:5
+    // class CertificateManager(ARC4Contract):
+    txna ApplicationArgs 1
+    btoi
+    txnas Accounts
+    txna ApplicationArgs 2
+    extract 2 0
+    txna ApplicationArgs 3
+    btoi
+    // smart_contracts/certificate_manager/contract.py:15
+    // @abimethod()
+    callsub issue_certificate
+    itob
+    bytec_0 // 0x151f7c75
+    swap
+    concat
+    log
+    intc_0 // 1
+    return
+
+main_bare_routing@10:
+    // smart_contracts/certificate_manager/contract.py:5
+    // class CertificateManager(ARC4Contract):
+    txn OnCompletion
+    bnz main_after_if_else@12
+    txn ApplicationID
+    !
+    assert // can only call when creating
+    intc_0 // 1
+    return
+
+
+// smart_contracts.certificate_manager.contract.CertificateManager.issue_certificate(wallet: bytes, metadata_hash: bytes, expires_at_round: uint64) -> uint64:
+issue_certificate:
+    // smart_contracts/certificate_manager/contract.py:15-21
+    // @abimethod()
+    // def issue_certificate(
+    //     self,
+    //     wallet: Account,
+    //     metadata_hash: String,
+    //     expires_at_round: UInt64,
+    // ) -> UInt64:
+    proto 3 1
+    // smart_contracts/certificate_manager/contract.py:22
+    // assert Txn.sender == Global.creator_address, "Only creator can issue certificates"
+    txn Sender
+    global CreatorAddress
+    ==
+    assert // Only creator can issue certificates
+    // smart_contracts/certificate_manager/contract.py:23
+    // assert metadata_hash.bytes.length > UInt64(0), "Metadata hash required"
+    frame_dig -2
+    len
+    assert // Metadata hash required
+    // smart_contracts/certificate_manager/contract.py:24
+    // assert expires_at_round > UInt64(0), "Expiry round must be > 0"
+    frame_dig -1
+    assert // Expiry round must be > 0
+    // smart_contracts/certificate_manager/contract.py:26
+    // cert_id = self.next_certificate_id
+    intc_1 // 0
+    bytec_2 // "next_certificate_id"
+    app_global_get_ex
+    assert // check self.next_certificate_id exists
+    // smart_contracts/certificate_manager/contract.py:27
+    // self.certificate_owner[cert_id] = wallet
+    dup
+    itob
+    bytec 4 // "cm_owner_"
+    dig 1
+    concat
+    frame_dig -3
+    box_put
+    // smart_contracts/certificate_manager/contract.py:28
+    // self.certificate_metadata[cert_id] = metadata_hash
+    bytec 5 // "cm_meta_"
+    dig 1
+    concat
+    dup
+    box_del
+    pop
+    frame_dig -2
+    box_put
+    // smart_contracts/certificate_manager/contract.py:29
+    // self.certificate_expiry[cert_id] = expires_at_round
+    bytec 6 // "cm_exp_"
+    dig 1
+    concat
+    frame_dig -1
+    itob
+    box_put
+    // smart_contracts/certificate_manager/contract.py:30
+    // self.certificate_active[cert_id] = UInt64(1)
+    bytec_1 // "cm_act_"
+    swap
+    concat
+    intc_0 // 1
+    itob
+    box_put
+    // smart_contracts/certificate_manager/contract.py:31
+    // self.next_certificate_id = cert_id + UInt64(1)
+    dup
+    intc_0 // 1
+    +
+    bytec_2 // "next_certificate_id"
+    swap
+    app_global_put
+    // smart_contracts/certificate_manager/contract.py:33
+    // return cert_id
+    retsub
+
+
+// smart_contracts.certificate_manager.contract.CertificateManager.revoke_certificate(certificate_id: uint64) -> void:
+revoke_certificate:
+    // smart_contracts/certificate_manager/contract.py:35-36
+    // @abimethod()
+    // def revoke_certificate(self, certificate_id: UInt64) -> None:
+    proto 1 0
+    // smart_contracts/certificate_manager/contract.py:37
+    // assert Txn.sender == Global.creator_address, "Only creator can revoke certificates"
+    txn Sender
+    global CreatorAddress
+    ==
+    assert // Only creator can revoke certificates
+    // smart_contracts/certificate_manager/contract.py:38
+    // assert certificate_id in self.certificate_active, "Certificate not found"
+    frame_dig -1
+    itob
+    bytec_1 // "cm_act_"
+    swap
+    concat
+    dup
+    box_len
+    bury 1
+    assert // Certificate not found
+    // smart_contracts/certificate_manager/contract.py:39
+    // self.certificate_active[certificate_id] = UInt64(0)
+    intc_1 // 0
+    itob
+    box_put
+    retsub
+
+
+// smart_contracts.certificate_manager.contract.CertificateManager.verify_certificate(certificate_id: uint64, wallet: bytes) -> uint64:
+verify_certificate:
+    // smart_contracts/certificate_manager/contract.py:41-42
+    // @abimethod(readonly=True)
+    // def verify_certificate(self, certificate_id: UInt64, wallet: Account) -> bool:
+    proto 2 1
+    // smart_contracts/certificate_manager/contract.py:43
+    // active, active_exists = self.certificate_active.maybe(certificate_id)
+    frame_dig -2
+    itob
+    bytec_1 // "cm_act_"
+    dig 1
+    concat
+    box_get
+    swap
+    btoi
+    cover 2
+    // smart_contracts/certificate_manager/contract.py:44
+    // owner, owner_exists = self.certificate_owner.maybe(certificate_id)
+    bytec 4 // "cm_owner_"
+    dig 2
+    concat
+    box_get
+    cover 3
+    cover 2
+    // smart_contracts/certificate_manager/contract.py:45
+    // expiry, expiry_exists = self.certificate_expiry.maybe(certificate_id)
+    bytec 6 // "cm_exp_"
+    uncover 2
+    concat
+    box_get
+    cover 2
+    btoi
+    swap
+    // smart_contracts/certificate_manager/contract.py:47
+    // if not active_exists or not owner_exists or not expiry_exists:
+    bz verify_certificate_if_body@3
+    frame_dig 1
+    bz verify_certificate_if_body@3
+    frame_dig 3
+    bnz verify_certificate_after_if_else@4
+
+verify_certificate_if_body@3:
+    // smart_contracts/certificate_manager/contract.py:48
+    // return False
+    intc_1 // 0
+    frame_bury 0
+    retsub
+
+verify_certificate_after_if_else@4:
+    // smart_contracts/certificate_manager/contract.py:49
+    // if active != UInt64(1):
+    frame_dig 0
+    intc_0 // 1
+    !=
+    bz verify_certificate_after_if_else@6
+    // smart_contracts/certificate_manager/contract.py:50
+    // return False
+    intc_1 // 0
+    frame_bury 0
+    retsub
+
+verify_certificate_after_if_else@6:
+    // smart_contracts/certificate_manager/contract.py:51
+    // if owner != wallet:
+    frame_dig 2
+    frame_dig -1
+    !=
+    bz verify_certificate_after_if_else@8
+    // smart_contracts/certificate_manager/contract.py:52
+    // return False
+    intc_1 // 0
+    frame_bury 0
+    retsub
+
+verify_certificate_after_if_else@8:
+    // smart_contracts/certificate_manager/contract.py:53
+    // return Global.round <= expiry
+    global Round
+    frame_dig 4
+    <=
+    frame_bury 0
+    retsub
+
+
+// smart_contracts.certificate_manager.contract.CertificateManager.get_certificate_metadata(certificate_id: uint64) -> bytes:
+get_certificate_metadata:
+    // smart_contracts/certificate_manager/contract.py:55-56
+    // @abimethod(readonly=True)
+    // def get_certificate_metadata(self, certificate_id: UInt64) -> String:
+    proto 1 1
+    // smart_contracts/certificate_manager/contract.py:57
+    // metadata, exists = self.certificate_metadata.maybe(certificate_id)
+    frame_dig -1
+    itob
+    bytec 5 // "cm_meta_"
+    swap
+    concat
+    box_get
+    // smart_contracts/certificate_manager/contract.py:58
+    // if exists:
+    bz get_certificate_metadata_after_if_else@2
+    // smart_contracts/certificate_manager/contract.py:59
+    // return metadata
+    frame_dig 0
+    swap
+    retsub
+
+get_certificate_metadata_after_if_else@2:
+    // smart_contracts/certificate_manager/contract.py:60
+    // return String("")
+    pushbytes ""
+    swap
+    retsub
+
+
+// smart_contracts.certificate_manager.contract.CertificateManager.is_certificate_active(certificate_id: uint64) -> uint64:
+is_certificate_active:
+    // smart_contracts/certificate_manager/contract.py:62-63
+    // @abimethod(readonly=True)
+    // def is_certificate_active(self, certificate_id: UInt64) -> bool:
+    proto 1 1
+    // smart_contracts/certificate_manager/contract.py:64
+    // active, exists = self.certificate_active.maybe(certificate_id)
+    frame_dig -1
+    itob
+    bytec_1 // "cm_act_"
+    swap
+    concat
+    box_get
+    swap
+    btoi
+    swap
+    // smart_contracts/certificate_manager/contract.py:65
+    // return exists and active == UInt64(1)
+    bz is_certificate_active_bool_false@3
+    frame_dig 0
+    intc_0 // 1
+    ==
+    bz is_certificate_active_bool_false@3
+    intc_0 // 1
+
+is_certificate_active_bool_merge@4:
+    // smart_contracts/certificate_manager/contract.py:65
+    // return exists and active == UInt64(1)
+    swap
+    retsub
+
+is_certificate_active_bool_false@3:
+    intc_1 // 0
+    b is_certificate_active_bool_merge@4

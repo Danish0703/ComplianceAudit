@@ -1,0 +1,367 @@
+#pragma version 10
+#pragma typetrack false
+
+// smart_contracts.txn_validator.contract.TxnValidator.__algopy_entrypoint_with_init() -> uint64:
+main:
+    intcblock 1 0 100
+    bytecblock "max_amount_micro_algo" "bl_" "alert_threshold" 0x151f7c75
+    txn ApplicationID
+    bnz main_after_if_else@2
+    // smart_contracts/txn_validator/contract.py:11
+    // self.max_amount_micro_algo = UInt64(1_000_000_000)
+    bytec_0 // "max_amount_micro_algo"
+    pushint 1000000000 // 1000000000
+    app_global_put
+    // smart_contracts/txn_validator/contract.py:12
+    // self.alert_threshold = UInt64(70)
+    bytec_2 // "alert_threshold"
+    pushint 70 // 70
+    app_global_put
+
+main_after_if_else@2:
+    // smart_contracts/txn_validator/contract.py:5
+    // class TxnValidator(ARC4Contract):
+    txn NumAppArgs
+    bz main_bare_routing@10
+    pushbytess 0xb99e94e3 0xa5b578c4 0x9446ebb1 0x3d042fe1 0xc650d5a4 // method "configure(uint64,uint64)void", method "set_wallet_block_status(account,bool)void", method "validate_transaction(account,account,uint64)uint64", method "is_wallet_blocked(account)bool", method "get_threshold()uint64"
+    txna ApplicationArgs 0
+    match main_configure_route@5 main_set_wallet_block_status_route@6 main_validate_transaction_route@7 main_is_wallet_blocked_route@8 main_get_threshold_route@9
+
+main_after_if_else@12:
+    // smart_contracts/txn_validator/contract.py:5
+    // class TxnValidator(ARC4Contract):
+    intc_1 // 0
+    return
+
+main_get_threshold_route@9:
+    // smart_contracts/txn_validator/contract.py:53
+    // @abimethod(readonly=True)
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    callsub get_threshold
+    itob
+    bytec_3 // 0x151f7c75
+    swap
+    concat
+    log
+    intc_0 // 1
+    return
+
+main_is_wallet_blocked_route@8:
+    // smart_contracts/txn_validator/contract.py:48
+    // @abimethod(readonly=True)
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    // smart_contracts/txn_validator/contract.py:5
+    // class TxnValidator(ARC4Contract):
+    txna ApplicationArgs 1
+    btoi
+    txnas Accounts
+    // smart_contracts/txn_validator/contract.py:48
+    // @abimethod(readonly=True)
+    callsub is_wallet_blocked
+    pushbytes 0x00
+    intc_1 // 0
+    uncover 2
+    setbit
+    bytec_3 // 0x151f7c75
+    swap
+    concat
+    log
+    intc_0 // 1
+    return
+
+main_validate_transaction_route@7:
+    // smart_contracts/txn_validator/contract.py:26
+    // @abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    // smart_contracts/txn_validator/contract.py:5
+    // class TxnValidator(ARC4Contract):
+    txna ApplicationArgs 1
+    btoi
+    txnas Accounts
+    txna ApplicationArgs 2
+    btoi
+    txnas Accounts
+    txna ApplicationArgs 3
+    btoi
+    // smart_contracts/txn_validator/contract.py:26
+    // @abimethod()
+    callsub validate_transaction
+    itob
+    bytec_3 // 0x151f7c75
+    swap
+    concat
+    log
+    intc_0 // 1
+    return
+
+main_set_wallet_block_status_route@6:
+    // smart_contracts/txn_validator/contract.py:21
+    // @abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    // smart_contracts/txn_validator/contract.py:5
+    // class TxnValidator(ARC4Contract):
+    txna ApplicationArgs 1
+    btoi
+    txnas Accounts
+    txna ApplicationArgs 2
+    intc_1 // 0
+    getbit
+    // smart_contracts/txn_validator/contract.py:21
+    // @abimethod()
+    callsub set_wallet_block_status
+    intc_0 // 1
+    return
+
+main_configure_route@5:
+    // smart_contracts/txn_validator/contract.py:14
+    // @abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    // smart_contracts/txn_validator/contract.py:5
+    // class TxnValidator(ARC4Contract):
+    txna ApplicationArgs 1
+    btoi
+    txna ApplicationArgs 2
+    btoi
+    // smart_contracts/txn_validator/contract.py:14
+    // @abimethod()
+    callsub configure
+    intc_0 // 1
+    return
+
+main_bare_routing@10:
+    // smart_contracts/txn_validator/contract.py:5
+    // class TxnValidator(ARC4Contract):
+    txn OnCompletion
+    bnz main_after_if_else@12
+    txn ApplicationID
+    !
+    assert // can only call when creating
+    intc_0 // 1
+    return
+
+
+// smart_contracts.txn_validator.contract.TxnValidator.configure(max_amount_micro_algo: uint64, alert_threshold: uint64) -> void:
+configure:
+    // smart_contracts/txn_validator/contract.py:14-15
+    // @abimethod()
+    // def configure(self, max_amount_micro_algo: UInt64, alert_threshold: UInt64) -> None:
+    proto 2 0
+    // smart_contracts/txn_validator/contract.py:16
+    // assert Txn.sender == Global.creator_address, "Only creator can configure"
+    txn Sender
+    global CreatorAddress
+    ==
+    assert // Only creator can configure
+    // smart_contracts/txn_validator/contract.py:17
+    // assert alert_threshold <= UInt64(100), "Threshold must be <= 100"
+    frame_dig -1
+    intc_2 // 100
+    <=
+    assert // Threshold must be <= 100
+    // smart_contracts/txn_validator/contract.py:18
+    // self.max_amount_micro_algo = max_amount_micro_algo
+    bytec_0 // "max_amount_micro_algo"
+    frame_dig -2
+    app_global_put
+    // smart_contracts/txn_validator/contract.py:19
+    // self.alert_threshold = alert_threshold
+    bytec_2 // "alert_threshold"
+    frame_dig -1
+    app_global_put
+    retsub
+
+
+// smart_contracts.txn_validator.contract.TxnValidator.set_wallet_block_status(wallet: bytes, blocked: uint64) -> void:
+set_wallet_block_status:
+    // smart_contracts/txn_validator/contract.py:21-22
+    // @abimethod()
+    // def set_wallet_block_status(self, wallet: Account, blocked: bool) -> None:
+    proto 2 0
+    // smart_contracts/txn_validator/contract.py:23
+    // assert Txn.sender == Global.creator_address, "Only creator can manage blocklist"
+    txn Sender
+    global CreatorAddress
+    ==
+    assert // Only creator can manage blocklist
+    // smart_contracts/txn_validator/contract.py:24
+    // self.block_status[wallet] = UInt64(1) if blocked else UInt64(0)
+    bytec_1 // "bl_"
+    frame_dig -2
+    concat
+    frame_dig -1
+    itob
+    box_put
+    retsub
+
+
+// smart_contracts.txn_validator.contract.TxnValidator.validate_transaction(sender: bytes, receiver: bytes, amount: uint64) -> uint64:
+validate_transaction:
+    // smart_contracts/txn_validator/contract.py:26-27
+    // @abimethod()
+    // def validate_transaction(self, sender: Account, receiver: Account, amount: UInt64) -> UInt64:
+    proto 3 1
+    pushbytes ""
+    // smart_contracts/txn_validator/contract.py:28
+    // assert sender != receiver, "Sender and receiver must differ"
+    frame_dig -3
+    frame_dig -2
+    !=
+    assert // Sender and receiver must differ
+    // smart_contracts/txn_validator/contract.py:29
+    // assert amount > UInt64(0), "Amount must be > 0"
+    frame_dig -1
+    assert // Amount must be > 0
+    // smart_contracts/txn_validator/contract.py:31
+    // sender_blocked, sender_exists = self.block_status.maybe(sender)
+    bytec_1 // "bl_"
+    frame_dig -3
+    concat
+    box_get
+    swap
+    btoi
+    swap
+    // smart_contracts/txn_validator/contract.py:32
+    // receiver_blocked, receiver_exists = self.block_status.maybe(receiver)
+    bytec_1 // "bl_"
+    frame_dig -2
+    concat
+    box_get
+    cover 2
+    btoi
+    swap
+    // smart_contracts/txn_validator/contract.py:34
+    // if (sender_exists and sender_blocked == UInt64(1)) or (
+    bz validate_transaction_or_contd@2
+    frame_dig 1
+    intc_0 // 1
+    ==
+    bnz validate_transaction_if_body@4
+
+validate_transaction_or_contd@2:
+    // smart_contracts/txn_validator/contract.py:35
+    // receiver_exists and receiver_blocked == UInt64(1)
+    frame_dig 2
+    bz validate_transaction_after_if_else@5
+    frame_dig 3
+    intc_0 // 1
+    ==
+    bz validate_transaction_after_if_else@5
+
+validate_transaction_if_body@4:
+    // smart_contracts/txn_validator/contract.py:37
+    // return UInt64(100)
+    intc_2 // 100
+    frame_bury 0
+    retsub
+
+validate_transaction_after_if_else@5:
+    // smart_contracts/txn_validator/contract.py:39
+    // if amount > self.max_amount_micro_algo:
+    intc_1 // 0
+    bytec_0 // "max_amount_micro_algo"
+    app_global_get_ex
+    assert // check self.max_amount_micro_algo exists
+    frame_dig -1
+    <
+    bz validate_transaction_after_if_else@7
+    // smart_contracts/txn_validator/contract.py:40
+    // return UInt64(85)
+    pushint 85 // 85
+    frame_bury 0
+    retsub
+
+validate_transaction_after_if_else@7:
+    // smart_contracts/txn_validator/contract.py:42-43
+    // # Scale amount into a baseline 0-100 score against configured maximum.
+    // scaled = (amount * UInt64(100)) // self.max_amount_micro_algo
+    frame_dig -1
+    intc_2 // 100
+    *
+    intc_1 // 0
+    bytec_0 // "max_amount_micro_algo"
+    app_global_get_ex
+    assert // check self.max_amount_micro_algo exists
+    /
+    dup
+    frame_bury 0
+    // smart_contracts/txn_validator/contract.py:44
+    // if scaled > UInt64(100):
+    intc_2 // 100
+    >
+    bz validate_transaction_after_if_else@9
+    // smart_contracts/txn_validator/contract.py:45
+    // return UInt64(100)
+    intc_2 // 100
+    frame_bury 0
+    retsub
+
+validate_transaction_after_if_else@9:
+    // smart_contracts/txn_validator/contract.py:46
+    // return scaled
+    retsub
+
+
+// smart_contracts.txn_validator.contract.TxnValidator.is_wallet_blocked(wallet: bytes) -> uint64:
+is_wallet_blocked:
+    // smart_contracts/txn_validator/contract.py:48-49
+    // @abimethod(readonly=True)
+    // def is_wallet_blocked(self, wallet: Account) -> bool:
+    proto 1 1
+    // smart_contracts/txn_validator/contract.py:50
+    // status, exists = self.block_status.maybe(wallet)
+    bytec_1 // "bl_"
+    frame_dig -1
+    concat
+    box_get
+    swap
+    btoi
+    swap
+    // smart_contracts/txn_validator/contract.py:51
+    // return exists and status == UInt64(1)
+    bz is_wallet_blocked_bool_false@3
+    frame_dig 0
+    intc_0 // 1
+    ==
+    bz is_wallet_blocked_bool_false@3
+    intc_0 // 1
+
+is_wallet_blocked_bool_merge@4:
+    // smart_contracts/txn_validator/contract.py:51
+    // return exists and status == UInt64(1)
+    swap
+    retsub
+
+is_wallet_blocked_bool_false@3:
+    intc_1 // 0
+    b is_wallet_blocked_bool_merge@4
+
+
+// smart_contracts.txn_validator.contract.TxnValidator.get_threshold() -> uint64:
+get_threshold:
+    // smart_contracts/txn_validator/contract.py:55
+    // return self.alert_threshold
+    intc_1 // 0
+    bytec_2 // "alert_threshold"
+    app_global_get_ex
+    assert // check self.alert_threshold exists
+    retsub

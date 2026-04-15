@@ -1,0 +1,1778 @@
+{
+  "version": 3,
+  "sources": [
+    "../../blacklist_whitelist/contract.py"
+  ],
+  "mappings": ";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAIA;;AAAA;;;AAAA;;;;;;;;;;;;;;;;;;;;;;;;;;;AAAA;;;AAAA;;;;;;;;;;;;AAAA;;AAyBK;;AAAA;AAAA;AAAA;;AAAA;AAzBL;;;AAAA;AAAA;;AAyBK;;;AAAA;AAAA;AAAA;AAAA;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;;AALA;;AAAA;AAAA;AAAA;;AAAA;AApBL;;;AAAA;AAAA;;AAoBK;;;AAAA;AAAA;AAAA;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;;AALA;;AAAA;AAAA;AAAA;;AAAA;AAfL;;;AAAA;AAAA;;AAeK;;;AAAA;AAAA;AAAA;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;;AALA;;AAAA;AAAA;AAAA;;AAAA;AAVL;;;AAAA;AAAA;;AAAA;;;;AAAA;AAUK;;;AAAA;;AALA;;AAAA;AAAA;AAAA;;AAAA;AALL;;;AAAA;AAAA;;AAAA;;;;AAAA;AAKK;;;AAAA;;AALL;;AAAA;;;;;;;;;AAKA;;;AAEe;;AAAc;;AAAd;AAAP;AACA;AAAA;;AAAA;AAAA;;AAAA;AAAA;;AAER;;;AAEe;;AAAc;;AAAd;AAAP;AACA;AAAA;;AAAA;AAAA;;AAAA;AAAA;;AAER;;;AAEyB;AAAA;;AAAA;AAAA;AAAA;AAAA;AAAA;AACV;;;AAAW;;AAAU;AAAV;AAAX;;;;AAAP;AAAA;;;;;AAER;;;AAEyB;AAAA;;AAAA;AAAA;AAAA;AAAA;AAAA;AACV;;;AAAW;;AAAU;AAAV;AAAX;;;;AAAP;AAAA;;;;;AAER;;;AAE8B;AAAA;;AAAA;AAAA;AAAA;AAAA;AAAA;AACA;AAAA;;AAAA;AAAA;AAAA;;AAAA;AAAA;AAEnB;;;AAAiB;;AAAS;AAAT;AAAjB;;;AACQ;;;;;;;;;;;;;AAAP;;AAAA;AACD;;AAAA;;;AAAiB;;AAAS;AAAT;AAAjB;;;AACQ;;;;;;;;;;;;;AAAP;;AAAA;AACG;;;;;;;;;;AAAP;;AAAA",
+  "op_pc_offset": 0,
+  "pc_events": {
+    "1": {
+      "subroutine": "smart_contracts.blacklist_whitelist.contract.BlacklistWhitelist.__algopy_entrypoint_with_init",
+      "params": {},
+      "block": "main",
+      "stack_in": [],
+      "op": "intcblock 1 0"
+    },
+    "5": {
+      "op": "bytecblock 0x151f7c75 \"bw_black_\" \"bw_white_\" 0x00"
+    },
+    "34": {
+      "op": "txn NumAppArgs",
+      "defined_out": [
+        "tmp%0#2"
+      ],
+      "stack_out": [
+        "tmp%0#2"
+      ]
+    },
+    "36": {
+      "op": "bz main_bare_routing@10",
+      "stack_out": []
+    },
+    "39": {
+      "op": "pushbytess 0xed2ac7cc 0x4b7ebc69 0xee059726 0x2c72c8af 0xc35e8452 // method \"set_blacklist_status(account,bool)void\", method \"set_whitelist_status(account,bool)void\", method \"is_blacklisted(account)bool\", method \"is_whitelisted(account)bool\", method \"get_wallet_status(account)string\"",
+      "defined_out": [
+        "Method(get_wallet_status(account)string)",
+        "Method(is_blacklisted(account)bool)",
+        "Method(is_whitelisted(account)bool)",
+        "Method(set_blacklist_status(account,bool)void)",
+        "Method(set_whitelist_status(account,bool)void)"
+      ],
+      "stack_out": [
+        "Method(set_blacklist_status(account,bool)void)",
+        "Method(set_whitelist_status(account,bool)void)",
+        "Method(is_blacklisted(account)bool)",
+        "Method(is_whitelisted(account)bool)",
+        "Method(get_wallet_status(account)string)"
+      ]
+    },
+    "66": {
+      "op": "txna ApplicationArgs 0",
+      "defined_out": [
+        "Method(get_wallet_status(account)string)",
+        "Method(is_blacklisted(account)bool)",
+        "Method(is_whitelisted(account)bool)",
+        "Method(set_blacklist_status(account,bool)void)",
+        "Method(set_whitelist_status(account,bool)void)",
+        "tmp%2#0"
+      ],
+      "stack_out": [
+        "Method(set_blacklist_status(account,bool)void)",
+        "Method(set_whitelist_status(account,bool)void)",
+        "Method(is_blacklisted(account)bool)",
+        "Method(is_whitelisted(account)bool)",
+        "Method(get_wallet_status(account)string)",
+        "tmp%2#0"
+      ]
+    },
+    "69": {
+      "op": "match main_set_blacklist_status_route@5 main_set_whitelist_status_route@6 main_is_blacklisted_route@7 main_is_whitelisted_route@8 main_get_wallet_status_route@9",
+      "stack_out": []
+    },
+    "81": {
+      "block": "main_after_if_else@12",
+      "stack_in": [],
+      "op": "intc_1 // 0",
+      "defined_out": [
+        "tmp%0#1"
+      ],
+      "stack_out": [
+        "tmp%0#1"
+      ]
+    },
+    "82": {
+      "op": "return",
+      "stack_out": []
+    },
+    "83": {
+      "block": "main_get_wallet_status_route@9",
+      "stack_in": [],
+      "op": "txn OnCompletion",
+      "defined_out": [
+        "tmp%31#0"
+      ],
+      "stack_out": [
+        "tmp%31#0"
+      ]
+    },
+    "85": {
+      "op": "!",
+      "defined_out": [
+        "tmp%32#0"
+      ],
+      "stack_out": [
+        "tmp%32#0"
+      ]
+    },
+    "86": {
+      "error": "OnCompletion is not NoOp",
+      "op": "assert // OnCompletion is not NoOp",
+      "stack_out": []
+    },
+    "87": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%33#0"
+      ],
+      "stack_out": [
+        "tmp%33#0"
+      ]
+    },
+    "89": {
+      "error": "can only call when not creating",
+      "op": "assert // can only call when not creating",
+      "stack_out": []
+    },
+    "90": {
+      "op": "txna ApplicationArgs 1",
+      "defined_out": [
+        "reinterpret_bytes[1]%6#0"
+      ],
+      "stack_out": [
+        "reinterpret_bytes[1]%6#0"
+      ]
+    },
+    "93": {
+      "op": "btoi",
+      "defined_out": [
+        "tmp%35#0"
+      ],
+      "stack_out": [
+        "tmp%35#0"
+      ]
+    },
+    "94": {
+      "op": "txnas Accounts",
+      "defined_out": [
+        "tmp%36#0"
+      ],
+      "stack_out": [
+        "tmp%36#0"
+      ]
+    },
+    "96": {
+      "callsub": "smart_contracts.blacklist_whitelist.contract.BlacklistWhitelist.get_wallet_status",
+      "op": "callsub get_wallet_status",
+      "defined_out": [
+        "to_encode%2#0"
+      ],
+      "stack_out": [
+        "to_encode%2#0"
+      ]
+    },
+    "99": {
+      "op": "dup",
+      "defined_out": [
+        "to_encode%2#0",
+        "to_encode%2#0 (copy)"
+      ],
+      "stack_out": [
+        "to_encode%2#0",
+        "to_encode%2#0 (copy)"
+      ]
+    },
+    "100": {
+      "op": "len",
+      "defined_out": [
+        "length%0#0",
+        "to_encode%2#0"
+      ],
+      "stack_out": [
+        "to_encode%2#0",
+        "length%0#0"
+      ]
+    },
+    "101": {
+      "op": "itob",
+      "defined_out": [
+        "as_bytes%0#0",
+        "to_encode%2#0"
+      ],
+      "stack_out": [
+        "to_encode%2#0",
+        "as_bytes%0#0"
+      ]
+    },
+    "102": {
+      "op": "extract 6 2",
+      "defined_out": [
+        "length_uint16%0#0",
+        "to_encode%2#0"
+      ],
+      "stack_out": [
+        "to_encode%2#0",
+        "length_uint16%0#0"
+      ]
+    },
+    "105": {
+      "op": "swap",
+      "stack_out": [
+        "length_uint16%0#0",
+        "to_encode%2#0"
+      ]
+    },
+    "106": {
+      "op": "concat",
+      "defined_out": [
+        "encoded_value%0#0"
+      ],
+      "stack_out": [
+        "encoded_value%0#0"
+      ]
+    },
+    "107": {
+      "op": "bytec_0 // 0x151f7c75",
+      "defined_out": [
+        "0x151f7c75",
+        "encoded_value%0#0"
+      ],
+      "stack_out": [
+        "encoded_value%0#0",
+        "0x151f7c75"
+      ]
+    },
+    "108": {
+      "op": "swap",
+      "stack_out": [
+        "0x151f7c75",
+        "encoded_value%0#0"
+      ]
+    },
+    "109": {
+      "op": "concat",
+      "defined_out": [
+        "tmp%37#0"
+      ],
+      "stack_out": [
+        "tmp%37#0"
+      ]
+    },
+    "110": {
+      "op": "log",
+      "stack_out": []
+    },
+    "111": {
+      "op": "intc_0 // 1",
+      "defined_out": [
+        "tmp%0#1"
+      ],
+      "stack_out": [
+        "tmp%0#1"
+      ]
+    },
+    "112": {
+      "op": "return",
+      "stack_out": []
+    },
+    "113": {
+      "block": "main_is_whitelisted_route@8",
+      "stack_in": [],
+      "op": "txn OnCompletion",
+      "defined_out": [
+        "tmp%24#0"
+      ],
+      "stack_out": [
+        "tmp%24#0"
+      ]
+    },
+    "115": {
+      "op": "!",
+      "defined_out": [
+        "tmp%25#0"
+      ],
+      "stack_out": [
+        "tmp%25#0"
+      ]
+    },
+    "116": {
+      "error": "OnCompletion is not NoOp",
+      "op": "assert // OnCompletion is not NoOp",
+      "stack_out": []
+    },
+    "117": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%26#0"
+      ],
+      "stack_out": [
+        "tmp%26#0"
+      ]
+    },
+    "119": {
+      "error": "can only call when not creating",
+      "op": "assert // can only call when not creating",
+      "stack_out": []
+    },
+    "120": {
+      "op": "txna ApplicationArgs 1",
+      "defined_out": [
+        "reinterpret_bytes[1]%5#0"
+      ],
+      "stack_out": [
+        "reinterpret_bytes[1]%5#0"
+      ]
+    },
+    "123": {
+      "op": "btoi",
+      "defined_out": [
+        "tmp%28#0"
+      ],
+      "stack_out": [
+        "tmp%28#0"
+      ]
+    },
+    "124": {
+      "op": "txnas Accounts",
+      "defined_out": [
+        "tmp%29#0"
+      ],
+      "stack_out": [
+        "tmp%29#0"
+      ]
+    },
+    "126": {
+      "callsub": "smart_contracts.blacklist_whitelist.contract.BlacklistWhitelist.is_whitelisted",
+      "op": "callsub is_whitelisted",
+      "defined_out": [
+        "to_encode%1#0"
+      ],
+      "stack_out": [
+        "to_encode%1#0"
+      ]
+    },
+    "129": {
+      "op": "bytec_3 // 0x00",
+      "defined_out": [
+        "0x00",
+        "to_encode%1#0"
+      ],
+      "stack_out": [
+        "to_encode%1#0",
+        "0x00"
+      ]
+    },
+    "130": {
+      "op": "intc_1 // 0",
+      "defined_out": [
+        "0",
+        "0x00",
+        "to_encode%1#0"
+      ],
+      "stack_out": [
+        "to_encode%1#0",
+        "0x00",
+        "0"
+      ]
+    },
+    "131": {
+      "op": "uncover 2",
+      "stack_out": [
+        "0x00",
+        "0",
+        "to_encode%1#0"
+      ]
+    },
+    "133": {
+      "op": "setbit",
+      "defined_out": [
+        "encoded_bool%1#0"
+      ],
+      "stack_out": [
+        "encoded_bool%1#0"
+      ]
+    },
+    "134": {
+      "op": "bytec_0 // 0x151f7c75",
+      "defined_out": [
+        "0x151f7c75",
+        "encoded_bool%1#0"
+      ],
+      "stack_out": [
+        "encoded_bool%1#0",
+        "0x151f7c75"
+      ]
+    },
+    "135": {
+      "op": "swap",
+      "stack_out": [
+        "0x151f7c75",
+        "encoded_bool%1#0"
+      ]
+    },
+    "136": {
+      "op": "concat",
+      "defined_out": [
+        "tmp%30#0"
+      ],
+      "stack_out": [
+        "tmp%30#0"
+      ]
+    },
+    "137": {
+      "op": "log",
+      "stack_out": []
+    },
+    "138": {
+      "op": "intc_0 // 1",
+      "defined_out": [
+        "tmp%0#1"
+      ],
+      "stack_out": [
+        "tmp%0#1"
+      ]
+    },
+    "139": {
+      "op": "return",
+      "stack_out": []
+    },
+    "140": {
+      "block": "main_is_blacklisted_route@7",
+      "stack_in": [],
+      "op": "txn OnCompletion",
+      "defined_out": [
+        "tmp%17#0"
+      ],
+      "stack_out": [
+        "tmp%17#0"
+      ]
+    },
+    "142": {
+      "op": "!",
+      "defined_out": [
+        "tmp%18#0"
+      ],
+      "stack_out": [
+        "tmp%18#0"
+      ]
+    },
+    "143": {
+      "error": "OnCompletion is not NoOp",
+      "op": "assert // OnCompletion is not NoOp",
+      "stack_out": []
+    },
+    "144": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%19#0"
+      ],
+      "stack_out": [
+        "tmp%19#0"
+      ]
+    },
+    "146": {
+      "error": "can only call when not creating",
+      "op": "assert // can only call when not creating",
+      "stack_out": []
+    },
+    "147": {
+      "op": "txna ApplicationArgs 1",
+      "defined_out": [
+        "reinterpret_bytes[1]%4#0"
+      ],
+      "stack_out": [
+        "reinterpret_bytes[1]%4#0"
+      ]
+    },
+    "150": {
+      "op": "btoi",
+      "defined_out": [
+        "tmp%21#0"
+      ],
+      "stack_out": [
+        "tmp%21#0"
+      ]
+    },
+    "151": {
+      "op": "txnas Accounts",
+      "defined_out": [
+        "tmp%22#0"
+      ],
+      "stack_out": [
+        "tmp%22#0"
+      ]
+    },
+    "153": {
+      "callsub": "smart_contracts.blacklist_whitelist.contract.BlacklistWhitelist.is_blacklisted",
+      "op": "callsub is_blacklisted",
+      "defined_out": [
+        "to_encode%0#0"
+      ],
+      "stack_out": [
+        "to_encode%0#0"
+      ]
+    },
+    "156": {
+      "op": "bytec_3 // 0x00",
+      "defined_out": [
+        "0x00",
+        "to_encode%0#0"
+      ],
+      "stack_out": [
+        "to_encode%0#0",
+        "0x00"
+      ]
+    },
+    "157": {
+      "op": "intc_1 // 0",
+      "defined_out": [
+        "0",
+        "0x00",
+        "to_encode%0#0"
+      ],
+      "stack_out": [
+        "to_encode%0#0",
+        "0x00",
+        "0"
+      ]
+    },
+    "158": {
+      "op": "uncover 2",
+      "stack_out": [
+        "0x00",
+        "0",
+        "to_encode%0#0"
+      ]
+    },
+    "160": {
+      "op": "setbit",
+      "defined_out": [
+        "encoded_bool%0#0"
+      ],
+      "stack_out": [
+        "encoded_bool%0#0"
+      ]
+    },
+    "161": {
+      "op": "bytec_0 // 0x151f7c75",
+      "defined_out": [
+        "0x151f7c75",
+        "encoded_bool%0#0"
+      ],
+      "stack_out": [
+        "encoded_bool%0#0",
+        "0x151f7c75"
+      ]
+    },
+    "162": {
+      "op": "swap",
+      "stack_out": [
+        "0x151f7c75",
+        "encoded_bool%0#0"
+      ]
+    },
+    "163": {
+      "op": "concat",
+      "defined_out": [
+        "tmp%23#0"
+      ],
+      "stack_out": [
+        "tmp%23#0"
+      ]
+    },
+    "164": {
+      "op": "log",
+      "stack_out": []
+    },
+    "165": {
+      "op": "intc_0 // 1",
+      "defined_out": [
+        "tmp%0#1"
+      ],
+      "stack_out": [
+        "tmp%0#1"
+      ]
+    },
+    "166": {
+      "op": "return",
+      "stack_out": []
+    },
+    "167": {
+      "block": "main_set_whitelist_status_route@6",
+      "stack_in": [],
+      "op": "txn OnCompletion",
+      "defined_out": [
+        "tmp%10#0"
+      ],
+      "stack_out": [
+        "tmp%10#0"
+      ]
+    },
+    "169": {
+      "op": "!",
+      "defined_out": [
+        "tmp%11#0"
+      ],
+      "stack_out": [
+        "tmp%11#0"
+      ]
+    },
+    "170": {
+      "error": "OnCompletion is not NoOp",
+      "op": "assert // OnCompletion is not NoOp",
+      "stack_out": []
+    },
+    "171": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%12#0"
+      ],
+      "stack_out": [
+        "tmp%12#0"
+      ]
+    },
+    "173": {
+      "error": "can only call when not creating",
+      "op": "assert // can only call when not creating",
+      "stack_out": []
+    },
+    "174": {
+      "op": "txna ApplicationArgs 1",
+      "defined_out": [
+        "reinterpret_bytes[1]%2#0"
+      ],
+      "stack_out": [
+        "reinterpret_bytes[1]%2#0"
+      ]
+    },
+    "177": {
+      "op": "btoi",
+      "defined_out": [
+        "tmp%14#0"
+      ],
+      "stack_out": [
+        "tmp%14#0"
+      ]
+    },
+    "178": {
+      "op": "txnas Accounts",
+      "defined_out": [
+        "tmp%15#0"
+      ],
+      "stack_out": [
+        "tmp%15#0"
+      ]
+    },
+    "180": {
+      "op": "txna ApplicationArgs 2",
+      "defined_out": [
+        "reinterpret_bytes[1]%3#0",
+        "tmp%15#0"
+      ],
+      "stack_out": [
+        "tmp%15#0",
+        "reinterpret_bytes[1]%3#0"
+      ]
+    },
+    "183": {
+      "op": "intc_1 // 0",
+      "defined_out": [
+        "0",
+        "reinterpret_bytes[1]%3#0",
+        "tmp%15#0"
+      ],
+      "stack_out": [
+        "tmp%15#0",
+        "reinterpret_bytes[1]%3#0",
+        "0"
+      ]
+    },
+    "184": {
+      "op": "getbit",
+      "defined_out": [
+        "tmp%15#0",
+        "tmp%16#0"
+      ],
+      "stack_out": [
+        "tmp%15#0",
+        "tmp%16#0"
+      ]
+    },
+    "185": {
+      "callsub": "smart_contracts.blacklist_whitelist.contract.BlacklistWhitelist.set_whitelist_status",
+      "op": "callsub set_whitelist_status",
+      "stack_out": []
+    },
+    "188": {
+      "op": "intc_0 // 1",
+      "defined_out": [
+        "tmp%0#1"
+      ],
+      "stack_out": [
+        "tmp%0#1"
+      ]
+    },
+    "189": {
+      "op": "return",
+      "stack_out": []
+    },
+    "190": {
+      "block": "main_set_blacklist_status_route@5",
+      "stack_in": [],
+      "op": "txn OnCompletion",
+      "defined_out": [
+        "tmp%3#0"
+      ],
+      "stack_out": [
+        "tmp%3#0"
+      ]
+    },
+    "192": {
+      "op": "!",
+      "defined_out": [
+        "tmp%4#0"
+      ],
+      "stack_out": [
+        "tmp%4#0"
+      ]
+    },
+    "193": {
+      "error": "OnCompletion is not NoOp",
+      "op": "assert // OnCompletion is not NoOp",
+      "stack_out": []
+    },
+    "194": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%5#0"
+      ],
+      "stack_out": [
+        "tmp%5#0"
+      ]
+    },
+    "196": {
+      "error": "can only call when not creating",
+      "op": "assert // can only call when not creating",
+      "stack_out": []
+    },
+    "197": {
+      "op": "txna ApplicationArgs 1",
+      "defined_out": [
+        "reinterpret_bytes[1]%0#0"
+      ],
+      "stack_out": [
+        "reinterpret_bytes[1]%0#0"
+      ]
+    },
+    "200": {
+      "op": "btoi",
+      "defined_out": [
+        "tmp%7#0"
+      ],
+      "stack_out": [
+        "tmp%7#0"
+      ]
+    },
+    "201": {
+      "op": "txnas Accounts",
+      "defined_out": [
+        "tmp%8#0"
+      ],
+      "stack_out": [
+        "tmp%8#0"
+      ]
+    },
+    "203": {
+      "op": "txna ApplicationArgs 2",
+      "defined_out": [
+        "reinterpret_bytes[1]%1#0",
+        "tmp%8#0"
+      ],
+      "stack_out": [
+        "tmp%8#0",
+        "reinterpret_bytes[1]%1#0"
+      ]
+    },
+    "206": {
+      "op": "intc_1 // 0",
+      "defined_out": [
+        "0",
+        "reinterpret_bytes[1]%1#0",
+        "tmp%8#0"
+      ],
+      "stack_out": [
+        "tmp%8#0",
+        "reinterpret_bytes[1]%1#0",
+        "0"
+      ]
+    },
+    "207": {
+      "op": "getbit",
+      "defined_out": [
+        "tmp%8#0",
+        "tmp%9#0"
+      ],
+      "stack_out": [
+        "tmp%8#0",
+        "tmp%9#0"
+      ]
+    },
+    "208": {
+      "callsub": "smart_contracts.blacklist_whitelist.contract.BlacklistWhitelist.set_blacklist_status",
+      "op": "callsub set_blacklist_status",
+      "stack_out": []
+    },
+    "211": {
+      "op": "intc_0 // 1",
+      "defined_out": [
+        "tmp%0#1"
+      ],
+      "stack_out": [
+        "tmp%0#1"
+      ]
+    },
+    "212": {
+      "op": "return",
+      "stack_out": []
+    },
+    "213": {
+      "block": "main_bare_routing@10",
+      "stack_in": [],
+      "op": "txn OnCompletion",
+      "defined_out": [
+        "tmp%38#0"
+      ],
+      "stack_out": [
+        "tmp%38#0"
+      ]
+    },
+    "215": {
+      "op": "bnz main_after_if_else@12",
+      "stack_out": []
+    },
+    "218": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%39#0"
+      ],
+      "stack_out": [
+        "tmp%39#0"
+      ]
+    },
+    "220": {
+      "op": "!",
+      "defined_out": [
+        "tmp%40#0"
+      ],
+      "stack_out": [
+        "tmp%40#0"
+      ]
+    },
+    "221": {
+      "error": "can only call when creating",
+      "op": "assert // can only call when creating",
+      "stack_out": []
+    },
+    "222": {
+      "op": "intc_0 // 1",
+      "defined_out": [
+        "tmp%0#1"
+      ],
+      "stack_out": [
+        "tmp%0#1"
+      ]
+    },
+    "223": {
+      "op": "return",
+      "stack_out": []
+    },
+    "224": {
+      "subroutine": "smart_contracts.blacklist_whitelist.contract.BlacklistWhitelist.set_blacklist_status",
+      "params": {
+        "wallet#0": "bytes",
+        "blocked#0": "uint64"
+      },
+      "block": "set_blacklist_status",
+      "stack_in": [],
+      "op": "proto 2 0"
+    },
+    "227": {
+      "op": "txn Sender",
+      "defined_out": [
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0"
+      ]
+    },
+    "229": {
+      "op": "global CreatorAddress",
+      "defined_out": [
+        "tmp%0#0",
+        "tmp%1#0"
+      ],
+      "stack_out": [
+        "tmp%0#0",
+        "tmp%1#0"
+      ]
+    },
+    "231": {
+      "op": "==",
+      "defined_out": [
+        "tmp%2#0"
+      ],
+      "stack_out": [
+        "tmp%2#0"
+      ]
+    },
+    "232": {
+      "error": "Only creator can update blacklist",
+      "op": "assert // Only creator can update blacklist",
+      "stack_out": []
+    },
+    "233": {
+      "op": "bytec_1 // \"bw_black_\"",
+      "defined_out": [
+        "\"bw_black_\""
+      ],
+      "stack_out": [
+        "\"bw_black_\""
+      ]
+    },
+    "234": {
+      "op": "frame_dig -2",
+      "defined_out": [
+        "\"bw_black_\"",
+        "wallet#0 (copy)"
+      ],
+      "stack_out": [
+        "\"bw_black_\"",
+        "wallet#0 (copy)"
+      ]
+    },
+    "236": {
+      "op": "concat",
+      "defined_out": [
+        "tmp%3#0"
+      ],
+      "stack_out": [
+        "tmp%3#0"
+      ]
+    },
+    "237": {
+      "op": "frame_dig -1",
+      "defined_out": [
+        "blocked#0 (copy)",
+        "tmp%3#0"
+      ],
+      "stack_out": [
+        "tmp%3#0",
+        "blocked#0 (copy)"
+      ]
+    },
+    "239": {
+      "op": "itob",
+      "defined_out": [
+        "new_box_value%0#0",
+        "tmp%3#0"
+      ],
+      "stack_out": [
+        "tmp%3#0",
+        "new_box_value%0#0"
+      ]
+    },
+    "240": {
+      "op": "box_put",
+      "stack_out": []
+    },
+    "241": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "242": {
+      "subroutine": "smart_contracts.blacklist_whitelist.contract.BlacklistWhitelist.set_whitelist_status",
+      "params": {
+        "wallet#0": "bytes",
+        "approved#0": "uint64"
+      },
+      "block": "set_whitelist_status",
+      "stack_in": [],
+      "op": "proto 2 0"
+    },
+    "245": {
+      "op": "txn Sender",
+      "defined_out": [
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0"
+      ]
+    },
+    "247": {
+      "op": "global CreatorAddress",
+      "defined_out": [
+        "tmp%0#0",
+        "tmp%1#0"
+      ],
+      "stack_out": [
+        "tmp%0#0",
+        "tmp%1#0"
+      ]
+    },
+    "249": {
+      "op": "==",
+      "defined_out": [
+        "tmp%2#0"
+      ],
+      "stack_out": [
+        "tmp%2#0"
+      ]
+    },
+    "250": {
+      "error": "Only creator can update whitelist",
+      "op": "assert // Only creator can update whitelist",
+      "stack_out": []
+    },
+    "251": {
+      "op": "bytec_2 // \"bw_white_\"",
+      "defined_out": [
+        "\"bw_white_\""
+      ],
+      "stack_out": [
+        "\"bw_white_\""
+      ]
+    },
+    "252": {
+      "op": "frame_dig -2",
+      "defined_out": [
+        "\"bw_white_\"",
+        "wallet#0 (copy)"
+      ],
+      "stack_out": [
+        "\"bw_white_\"",
+        "wallet#0 (copy)"
+      ]
+    },
+    "254": {
+      "op": "concat",
+      "defined_out": [
+        "tmp%3#0"
+      ],
+      "stack_out": [
+        "tmp%3#0"
+      ]
+    },
+    "255": {
+      "op": "frame_dig -1",
+      "defined_out": [
+        "approved#0 (copy)",
+        "tmp%3#0"
+      ],
+      "stack_out": [
+        "tmp%3#0",
+        "approved#0 (copy)"
+      ]
+    },
+    "257": {
+      "op": "itob",
+      "defined_out": [
+        "new_box_value%0#0",
+        "tmp%3#0"
+      ],
+      "stack_out": [
+        "tmp%3#0",
+        "new_box_value%0#0"
+      ]
+    },
+    "258": {
+      "op": "box_put",
+      "stack_out": []
+    },
+    "259": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "260": {
+      "subroutine": "smart_contracts.blacklist_whitelist.contract.BlacklistWhitelist.is_blacklisted",
+      "params": {
+        "wallet#0": "bytes"
+      },
+      "block": "is_blacklisted",
+      "stack_in": [],
+      "op": "proto 1 1"
+    },
+    "263": {
+      "op": "bytec_1 // \"bw_black_\"",
+      "defined_out": [
+        "\"bw_black_\""
+      ],
+      "stack_out": [
+        "\"bw_black_\""
+      ]
+    },
+    "264": {
+      "op": "frame_dig -1",
+      "defined_out": [
+        "\"bw_black_\"",
+        "wallet#0 (copy)"
+      ],
+      "stack_out": [
+        "\"bw_black_\"",
+        "wallet#0 (copy)"
+      ]
+    },
+    "266": {
+      "op": "concat",
+      "defined_out": [
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0"
+      ]
+    },
+    "267": {
+      "op": "box_get",
+      "defined_out": [
+        "exists#0",
+        "maybe_value%0#0"
+      ],
+      "stack_out": [
+        "maybe_value%0#0",
+        "exists#0"
+      ]
+    },
+    "268": {
+      "op": "swap",
+      "stack_out": [
+        "exists#0",
+        "maybe_value%0#0"
+      ]
+    },
+    "269": {
+      "op": "btoi",
+      "defined_out": [
+        "exists#0",
+        "status#0"
+      ],
+      "stack_out": [
+        "exists#0",
+        "status#0"
+      ]
+    },
+    "270": {
+      "op": "swap",
+      "defined_out": [
+        "exists#0",
+        "status#0"
+      ],
+      "stack_out": [
+        "status#0",
+        "exists#0"
+      ]
+    },
+    "271": {
+      "op": "bz is_blacklisted_bool_false@3",
+      "stack_out": [
+        "status#0"
+      ]
+    },
+    "274": {
+      "op": "frame_dig 0",
+      "stack_out": [
+        "status#0",
+        "status#0"
+      ]
+    },
+    "276": {
+      "op": "intc_0 // 1",
+      "defined_out": [
+        "1",
+        "status#0"
+      ],
+      "stack_out": [
+        "status#0",
+        "status#0",
+        "1"
+      ]
+    },
+    "277": {
+      "op": "==",
+      "defined_out": [
+        "status#0",
+        "tmp%1#0"
+      ],
+      "stack_out": [
+        "status#0",
+        "tmp%1#0"
+      ]
+    },
+    "278": {
+      "op": "bz is_blacklisted_bool_false@3",
+      "stack_out": [
+        "status#0"
+      ]
+    },
+    "281": {
+      "op": "intc_0 // 1",
+      "defined_out": [
+        "and_result%0#0",
+        "status#0"
+      ],
+      "stack_out": [
+        "status#0",
+        "and_result%0#0"
+      ]
+    },
+    "282": {
+      "block": "is_blacklisted_bool_merge@4",
+      "stack_in": [
+        "status#0",
+        "and_result%0#0"
+      ],
+      "op": "swap",
+      "defined_out": [
+        "and_result%0#0"
+      ]
+    },
+    "283": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "284": {
+      "block": "is_blacklisted_bool_false@3",
+      "stack_in": [
+        "status#0"
+      ],
+      "op": "intc_1 // 0",
+      "defined_out": [
+        "and_result%0#0"
+      ],
+      "stack_out": [
+        "status#0",
+        "and_result%0#0"
+      ]
+    },
+    "285": {
+      "op": "b is_blacklisted_bool_merge@4"
+    },
+    "288": {
+      "subroutine": "smart_contracts.blacklist_whitelist.contract.BlacklistWhitelist.is_whitelisted",
+      "params": {
+        "wallet#0": "bytes"
+      },
+      "block": "is_whitelisted",
+      "stack_in": [],
+      "op": "proto 1 1"
+    },
+    "291": {
+      "op": "bytec_2 // \"bw_white_\"",
+      "defined_out": [
+        "\"bw_white_\""
+      ],
+      "stack_out": [
+        "\"bw_white_\""
+      ]
+    },
+    "292": {
+      "op": "frame_dig -1",
+      "defined_out": [
+        "\"bw_white_\"",
+        "wallet#0 (copy)"
+      ],
+      "stack_out": [
+        "\"bw_white_\"",
+        "wallet#0 (copy)"
+      ]
+    },
+    "294": {
+      "op": "concat",
+      "defined_out": [
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0"
+      ]
+    },
+    "295": {
+      "op": "box_get",
+      "defined_out": [
+        "exists#0",
+        "maybe_value%0#0"
+      ],
+      "stack_out": [
+        "maybe_value%0#0",
+        "exists#0"
+      ]
+    },
+    "296": {
+      "op": "swap",
+      "stack_out": [
+        "exists#0",
+        "maybe_value%0#0"
+      ]
+    },
+    "297": {
+      "op": "btoi",
+      "defined_out": [
+        "exists#0",
+        "status#0"
+      ],
+      "stack_out": [
+        "exists#0",
+        "status#0"
+      ]
+    },
+    "298": {
+      "op": "swap",
+      "defined_out": [
+        "exists#0",
+        "status#0"
+      ],
+      "stack_out": [
+        "status#0",
+        "exists#0"
+      ]
+    },
+    "299": {
+      "op": "bz is_whitelisted_bool_false@3",
+      "stack_out": [
+        "status#0"
+      ]
+    },
+    "302": {
+      "op": "frame_dig 0",
+      "stack_out": [
+        "status#0",
+        "status#0"
+      ]
+    },
+    "304": {
+      "op": "intc_0 // 1",
+      "defined_out": [
+        "1",
+        "status#0"
+      ],
+      "stack_out": [
+        "status#0",
+        "status#0",
+        "1"
+      ]
+    },
+    "305": {
+      "op": "==",
+      "defined_out": [
+        "status#0",
+        "tmp%1#0"
+      ],
+      "stack_out": [
+        "status#0",
+        "tmp%1#0"
+      ]
+    },
+    "306": {
+      "op": "bz is_whitelisted_bool_false@3",
+      "stack_out": [
+        "status#0"
+      ]
+    },
+    "309": {
+      "op": "intc_0 // 1",
+      "defined_out": [
+        "and_result%0#0",
+        "status#0"
+      ],
+      "stack_out": [
+        "status#0",
+        "and_result%0#0"
+      ]
+    },
+    "310": {
+      "block": "is_whitelisted_bool_merge@4",
+      "stack_in": [
+        "status#0",
+        "and_result%0#0"
+      ],
+      "op": "swap",
+      "defined_out": [
+        "and_result%0#0"
+      ]
+    },
+    "311": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "312": {
+      "block": "is_whitelisted_bool_false@3",
+      "stack_in": [
+        "status#0"
+      ],
+      "op": "intc_1 // 0",
+      "defined_out": [
+        "and_result%0#0"
+      ],
+      "stack_out": [
+        "status#0",
+        "and_result%0#0"
+      ]
+    },
+    "313": {
+      "op": "b is_whitelisted_bool_merge@4"
+    },
+    "316": {
+      "subroutine": "smart_contracts.blacklist_whitelist.contract.BlacklistWhitelist.get_wallet_status",
+      "params": {
+        "wallet#0": "bytes"
+      },
+      "block": "get_wallet_status",
+      "stack_in": [],
+      "op": "proto 1 1"
+    },
+    "319": {
+      "op": "bytec_1 // \"bw_black_\"",
+      "defined_out": [
+        "\"bw_black_\""
+      ],
+      "stack_out": [
+        "\"bw_black_\""
+      ]
+    },
+    "320": {
+      "op": "frame_dig -1",
+      "defined_out": [
+        "\"bw_black_\"",
+        "wallet#0 (copy)"
+      ],
+      "stack_out": [
+        "\"bw_black_\"",
+        "wallet#0 (copy)"
+      ]
+    },
+    "322": {
+      "op": "concat",
+      "defined_out": [
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0"
+      ]
+    },
+    "323": {
+      "op": "box_get",
+      "defined_out": [
+        "black_exists#0",
+        "maybe_value%0#0"
+      ],
+      "stack_out": [
+        "maybe_value%0#0",
+        "black_exists#0"
+      ]
+    },
+    "324": {
+      "op": "swap",
+      "stack_out": [
+        "black_exists#0",
+        "maybe_value%0#0"
+      ]
+    },
+    "325": {
+      "op": "btoi",
+      "defined_out": [
+        "black#0",
+        "black_exists#0"
+      ],
+      "stack_out": [
+        "black_exists#0",
+        "black#0"
+      ]
+    },
+    "326": {
+      "op": "swap",
+      "defined_out": [
+        "black#0",
+        "black_exists#0"
+      ],
+      "stack_out": [
+        "black#0",
+        "black_exists#0"
+      ]
+    },
+    "327": {
+      "op": "bytec_2 // \"bw_white_\"",
+      "defined_out": [
+        "\"bw_white_\"",
+        "black#0",
+        "black_exists#0"
+      ],
+      "stack_out": [
+        "black#0",
+        "black_exists#0",
+        "\"bw_white_\""
+      ]
+    },
+    "328": {
+      "op": "frame_dig -1",
+      "stack_out": [
+        "black#0",
+        "black_exists#0",
+        "\"bw_white_\"",
+        "wallet#0 (copy)"
+      ]
+    },
+    "330": {
+      "op": "concat",
+      "defined_out": [
+        "black#0",
+        "black_exists#0",
+        "tmp%1#0"
+      ],
+      "stack_out": [
+        "black#0",
+        "black_exists#0",
+        "tmp%1#0"
+      ]
+    },
+    "331": {
+      "op": "box_get",
+      "defined_out": [
+        "black#0",
+        "black_exists#0",
+        "maybe_value%1#0",
+        "white_exists#0"
+      ],
+      "stack_out": [
+        "black#0",
+        "black_exists#0",
+        "maybe_value%1#0",
+        "white_exists#0"
+      ]
+    },
+    "332": {
+      "op": "cover 2",
+      "defined_out": [
+        "black#0",
+        "black_exists#0",
+        "maybe_value%1#0",
+        "white_exists#0"
+      ],
+      "stack_out": [
+        "black#0",
+        "white_exists#0",
+        "black_exists#0",
+        "maybe_value%1#0"
+      ]
+    },
+    "334": {
+      "op": "btoi",
+      "defined_out": [
+        "black#0",
+        "black_exists#0",
+        "white#0",
+        "white_exists#0"
+      ],
+      "stack_out": [
+        "black#0",
+        "white_exists#0",
+        "black_exists#0",
+        "white#0"
+      ]
+    },
+    "335": {
+      "op": "swap",
+      "stack_out": [
+        "black#0",
+        "white_exists#0",
+        "white#0",
+        "black_exists#0"
+      ]
+    },
+    "336": {
+      "op": "bz get_wallet_status_after_if_else@3",
+      "stack_out": [
+        "black#0",
+        "white_exists#0",
+        "white#0"
+      ]
+    },
+    "339": {
+      "op": "frame_dig 0",
+      "stack_out": [
+        "black#0",
+        "white_exists#0",
+        "white#0",
+        "black#0"
+      ]
+    },
+    "341": {
+      "op": "intc_0 // 1",
+      "defined_out": [
+        "1",
+        "black#0",
+        "white#0",
+        "white_exists#0"
+      ],
+      "stack_out": [
+        "black#0",
+        "white_exists#0",
+        "white#0",
+        "black#0",
+        "1"
+      ]
+    },
+    "342": {
+      "op": "==",
+      "defined_out": [
+        "black#0",
+        "tmp%2#0",
+        "white#0",
+        "white_exists#0"
+      ],
+      "stack_out": [
+        "black#0",
+        "white_exists#0",
+        "white#0",
+        "tmp%2#0"
+      ]
+    },
+    "343": {
+      "op": "bz get_wallet_status_after_if_else@3",
+      "stack_out": [
+        "black#0",
+        "white_exists#0",
+        "white#0"
+      ]
+    },
+    "346": {
+      "op": "pushbytes \"blacklisted\"",
+      "defined_out": [
+        "\"blacklisted\"",
+        "black#0",
+        "white#0",
+        "white_exists#0"
+      ],
+      "stack_out": [
+        "black#0",
+        "white_exists#0",
+        "white#0",
+        "\"blacklisted\""
+      ]
+    },
+    "359": {
+      "op": "frame_bury 0"
+    },
+    "361": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "362": {
+      "block": "get_wallet_status_after_if_else@3",
+      "stack_in": [
+        "black#0",
+        "white_exists#0",
+        "white#0"
+      ],
+      "op": "frame_dig 1",
+      "defined_out": [
+        "white_exists#0"
+      ],
+      "stack_out": [
+        "black#0",
+        "white_exists#0",
+        "white#0",
+        "white_exists#0"
+      ]
+    },
+    "364": {
+      "op": "bz get_wallet_status_after_if_else@6",
+      "stack_out": [
+        "black#0",
+        "white_exists#0",
+        "white#0"
+      ]
+    },
+    "367": {
+      "op": "frame_dig 2",
+      "defined_out": [
+        "white#0",
+        "white_exists#0"
+      ],
+      "stack_out": [
+        "black#0",
+        "white_exists#0",
+        "white#0",
+        "white#0"
+      ]
+    },
+    "369": {
+      "op": "intc_0 // 1",
+      "defined_out": [
+        "1",
+        "white#0",
+        "white_exists#0"
+      ],
+      "stack_out": [
+        "black#0",
+        "white_exists#0",
+        "white#0",
+        "white#0",
+        "1"
+      ]
+    },
+    "370": {
+      "op": "==",
+      "defined_out": [
+        "tmp%3#0",
+        "white#0",
+        "white_exists#0"
+      ],
+      "stack_out": [
+        "black#0",
+        "white_exists#0",
+        "white#0",
+        "tmp%3#0"
+      ]
+    },
+    "371": {
+      "op": "bz get_wallet_status_after_if_else@6",
+      "stack_out": [
+        "black#0",
+        "white_exists#0",
+        "white#0"
+      ]
+    },
+    "374": {
+      "op": "pushbytes \"whitelisted\"",
+      "defined_out": [
+        "\"whitelisted\"",
+        "white#0",
+        "white_exists#0"
+      ],
+      "stack_out": [
+        "black#0",
+        "white_exists#0",
+        "white#0",
+        "\"whitelisted\""
+      ]
+    },
+    "387": {
+      "op": "frame_bury 0"
+    },
+    "389": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "390": {
+      "block": "get_wallet_status_after_if_else@6",
+      "stack_in": [
+        "black#0",
+        "white_exists#0",
+        "white#0"
+      ],
+      "op": "pushbytes \"unlisted\"",
+      "defined_out": [
+        "\"unlisted\""
+      ],
+      "stack_out": [
+        "black#0",
+        "white_exists#0",
+        "white#0",
+        "\"unlisted\""
+      ]
+    },
+    "400": {
+      "op": "frame_bury 0"
+    },
+    "402": {
+      "retsub": true,
+      "op": "retsub"
+    }
+  }
+}

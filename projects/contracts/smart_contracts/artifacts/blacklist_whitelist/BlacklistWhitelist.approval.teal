@@ -1,0 +1,334 @@
+#pragma version 10
+#pragma typetrack false
+
+// smart_contracts.blacklist_whitelist.contract.BlacklistWhitelist.__algopy_entrypoint_with_init() -> uint64:
+main:
+    intcblock 1 0
+    bytecblock 0x151f7c75 "bw_black_" "bw_white_" 0x00
+    // smart_contracts/blacklist_whitelist/contract.py:5
+    // class BlacklistWhitelist(ARC4Contract):
+    txn NumAppArgs
+    bz main_bare_routing@10
+    pushbytess 0xed2ac7cc 0x4b7ebc69 0xee059726 0x2c72c8af 0xc35e8452 // method "set_blacklist_status(account,bool)void", method "set_whitelist_status(account,bool)void", method "is_blacklisted(account)bool", method "is_whitelisted(account)bool", method "get_wallet_status(account)string"
+    txna ApplicationArgs 0
+    match main_set_blacklist_status_route@5 main_set_whitelist_status_route@6 main_is_blacklisted_route@7 main_is_whitelisted_route@8 main_get_wallet_status_route@9
+
+main_after_if_else@12:
+    // smart_contracts/blacklist_whitelist/contract.py:5
+    // class BlacklistWhitelist(ARC4Contract):
+    intc_1 // 0
+    return
+
+main_get_wallet_status_route@9:
+    // smart_contracts/blacklist_whitelist/contract.py:30
+    // @abimethod(readonly=True)
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    // smart_contracts/blacklist_whitelist/contract.py:5
+    // class BlacklistWhitelist(ARC4Contract):
+    txna ApplicationArgs 1
+    btoi
+    txnas Accounts
+    // smart_contracts/blacklist_whitelist/contract.py:30
+    // @abimethod(readonly=True)
+    callsub get_wallet_status
+    dup
+    len
+    itob
+    extract 6 2
+    swap
+    concat
+    bytec_0 // 0x151f7c75
+    swap
+    concat
+    log
+    intc_0 // 1
+    return
+
+main_is_whitelisted_route@8:
+    // smart_contracts/blacklist_whitelist/contract.py:25
+    // @abimethod(readonly=True)
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    // smart_contracts/blacklist_whitelist/contract.py:5
+    // class BlacklistWhitelist(ARC4Contract):
+    txna ApplicationArgs 1
+    btoi
+    txnas Accounts
+    // smart_contracts/blacklist_whitelist/contract.py:25
+    // @abimethod(readonly=True)
+    callsub is_whitelisted
+    bytec_3 // 0x00
+    intc_1 // 0
+    uncover 2
+    setbit
+    bytec_0 // 0x151f7c75
+    swap
+    concat
+    log
+    intc_0 // 1
+    return
+
+main_is_blacklisted_route@7:
+    // smart_contracts/blacklist_whitelist/contract.py:20
+    // @abimethod(readonly=True)
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    // smart_contracts/blacklist_whitelist/contract.py:5
+    // class BlacklistWhitelist(ARC4Contract):
+    txna ApplicationArgs 1
+    btoi
+    txnas Accounts
+    // smart_contracts/blacklist_whitelist/contract.py:20
+    // @abimethod(readonly=True)
+    callsub is_blacklisted
+    bytec_3 // 0x00
+    intc_1 // 0
+    uncover 2
+    setbit
+    bytec_0 // 0x151f7c75
+    swap
+    concat
+    log
+    intc_0 // 1
+    return
+
+main_set_whitelist_status_route@6:
+    // smart_contracts/blacklist_whitelist/contract.py:15
+    // @abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    // smart_contracts/blacklist_whitelist/contract.py:5
+    // class BlacklistWhitelist(ARC4Contract):
+    txna ApplicationArgs 1
+    btoi
+    txnas Accounts
+    txna ApplicationArgs 2
+    intc_1 // 0
+    getbit
+    // smart_contracts/blacklist_whitelist/contract.py:15
+    // @abimethod()
+    callsub set_whitelist_status
+    intc_0 // 1
+    return
+
+main_set_blacklist_status_route@5:
+    // smart_contracts/blacklist_whitelist/contract.py:10
+    // @abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    // smart_contracts/blacklist_whitelist/contract.py:5
+    // class BlacklistWhitelist(ARC4Contract):
+    txna ApplicationArgs 1
+    btoi
+    txnas Accounts
+    txna ApplicationArgs 2
+    intc_1 // 0
+    getbit
+    // smart_contracts/blacklist_whitelist/contract.py:10
+    // @abimethod()
+    callsub set_blacklist_status
+    intc_0 // 1
+    return
+
+main_bare_routing@10:
+    // smart_contracts/blacklist_whitelist/contract.py:5
+    // class BlacklistWhitelist(ARC4Contract):
+    txn OnCompletion
+    bnz main_after_if_else@12
+    txn ApplicationID
+    !
+    assert // can only call when creating
+    intc_0 // 1
+    return
+
+
+// smart_contracts.blacklist_whitelist.contract.BlacklistWhitelist.set_blacklist_status(wallet: bytes, blocked: uint64) -> void:
+set_blacklist_status:
+    // smart_contracts/blacklist_whitelist/contract.py:10-11
+    // @abimethod()
+    // def set_blacklist_status(self, wallet: Account, blocked: bool) -> None:
+    proto 2 0
+    // smart_contracts/blacklist_whitelist/contract.py:12
+    // assert Txn.sender == Global.creator_address, "Only creator can update blacklist"
+    txn Sender
+    global CreatorAddress
+    ==
+    assert // Only creator can update blacklist
+    // smart_contracts/blacklist_whitelist/contract.py:13
+    // self.blacklist[wallet] = UInt64(1) if blocked else UInt64(0)
+    bytec_1 // "bw_black_"
+    frame_dig -2
+    concat
+    frame_dig -1
+    itob
+    box_put
+    retsub
+
+
+// smart_contracts.blacklist_whitelist.contract.BlacklistWhitelist.set_whitelist_status(wallet: bytes, approved: uint64) -> void:
+set_whitelist_status:
+    // smart_contracts/blacklist_whitelist/contract.py:15-16
+    // @abimethod()
+    // def set_whitelist_status(self, wallet: Account, approved: bool) -> None:
+    proto 2 0
+    // smart_contracts/blacklist_whitelist/contract.py:17
+    // assert Txn.sender == Global.creator_address, "Only creator can update whitelist"
+    txn Sender
+    global CreatorAddress
+    ==
+    assert // Only creator can update whitelist
+    // smart_contracts/blacklist_whitelist/contract.py:18
+    // self.whitelist[wallet] = UInt64(1) if approved else UInt64(0)
+    bytec_2 // "bw_white_"
+    frame_dig -2
+    concat
+    frame_dig -1
+    itob
+    box_put
+    retsub
+
+
+// smart_contracts.blacklist_whitelist.contract.BlacklistWhitelist.is_blacklisted(wallet: bytes) -> uint64:
+is_blacklisted:
+    // smart_contracts/blacklist_whitelist/contract.py:20-21
+    // @abimethod(readonly=True)
+    // def is_blacklisted(self, wallet: Account) -> bool:
+    proto 1 1
+    // smart_contracts/blacklist_whitelist/contract.py:22
+    // status, exists = self.blacklist.maybe(wallet)
+    bytec_1 // "bw_black_"
+    frame_dig -1
+    concat
+    box_get
+    swap
+    btoi
+    swap
+    // smart_contracts/blacklist_whitelist/contract.py:23
+    // return exists and status == UInt64(1)
+    bz is_blacklisted_bool_false@3
+    frame_dig 0
+    intc_0 // 1
+    ==
+    bz is_blacklisted_bool_false@3
+    intc_0 // 1
+
+is_blacklisted_bool_merge@4:
+    // smart_contracts/blacklist_whitelist/contract.py:23
+    // return exists and status == UInt64(1)
+    swap
+    retsub
+
+is_blacklisted_bool_false@3:
+    intc_1 // 0
+    b is_blacklisted_bool_merge@4
+
+
+// smart_contracts.blacklist_whitelist.contract.BlacklistWhitelist.is_whitelisted(wallet: bytes) -> uint64:
+is_whitelisted:
+    // smart_contracts/blacklist_whitelist/contract.py:25-26
+    // @abimethod(readonly=True)
+    // def is_whitelisted(self, wallet: Account) -> bool:
+    proto 1 1
+    // smart_contracts/blacklist_whitelist/contract.py:27
+    // status, exists = self.whitelist.maybe(wallet)
+    bytec_2 // "bw_white_"
+    frame_dig -1
+    concat
+    box_get
+    swap
+    btoi
+    swap
+    // smart_contracts/blacklist_whitelist/contract.py:28
+    // return exists and status == UInt64(1)
+    bz is_whitelisted_bool_false@3
+    frame_dig 0
+    intc_0 // 1
+    ==
+    bz is_whitelisted_bool_false@3
+    intc_0 // 1
+
+is_whitelisted_bool_merge@4:
+    // smart_contracts/blacklist_whitelist/contract.py:28
+    // return exists and status == UInt64(1)
+    swap
+    retsub
+
+is_whitelisted_bool_false@3:
+    intc_1 // 0
+    b is_whitelisted_bool_merge@4
+
+
+// smart_contracts.blacklist_whitelist.contract.BlacklistWhitelist.get_wallet_status(wallet: bytes) -> bytes:
+get_wallet_status:
+    // smart_contracts/blacklist_whitelist/contract.py:30-31
+    // @abimethod(readonly=True)
+    // def get_wallet_status(self, wallet: Account) -> String:
+    proto 1 1
+    // smart_contracts/blacklist_whitelist/contract.py:32
+    // black, black_exists = self.blacklist.maybe(wallet)
+    bytec_1 // "bw_black_"
+    frame_dig -1
+    concat
+    box_get
+    swap
+    btoi
+    swap
+    // smart_contracts/blacklist_whitelist/contract.py:33
+    // white, white_exists = self.whitelist.maybe(wallet)
+    bytec_2 // "bw_white_"
+    frame_dig -1
+    concat
+    box_get
+    cover 2
+    btoi
+    swap
+    // smart_contracts/blacklist_whitelist/contract.py:35
+    // if black_exists and black == UInt64(1):
+    bz get_wallet_status_after_if_else@3
+    frame_dig 0
+    intc_0 // 1
+    ==
+    bz get_wallet_status_after_if_else@3
+    // smart_contracts/blacklist_whitelist/contract.py:36
+    // return String("blacklisted")
+    pushbytes "blacklisted"
+    frame_bury 0
+    retsub
+
+get_wallet_status_after_if_else@3:
+    // smart_contracts/blacklist_whitelist/contract.py:37
+    // if white_exists and white == UInt64(1):
+    frame_dig 1
+    bz get_wallet_status_after_if_else@6
+    frame_dig 2
+    intc_0 // 1
+    ==
+    bz get_wallet_status_after_if_else@6
+    // smart_contracts/blacklist_whitelist/contract.py:38
+    // return String("whitelisted")
+    pushbytes "whitelisted"
+    frame_bury 0
+    retsub
+
+get_wallet_status_after_if_else@6:
+    // smart_contracts/blacklist_whitelist/contract.py:39
+    // return String("unlisted")
+    pushbytes "unlisted"
+    frame_bury 0
+    retsub
